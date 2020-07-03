@@ -1,0 +1,17 @@
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+
+    &__menu-items {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+    }
+
+    &__menu-item {
+        margin: 0 5px;
+    }
+
+    &__menu-item-item {}
+
+}

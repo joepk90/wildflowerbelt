@@ -1,0 +1,17 @@
+.site-header {
+
+    &__container {
+        display: flex;
+        width: 100%;
+    }
+
+    &__branding {
+        width: 50%;
+    }
+
+    &__navigation {
+        width: 50%;
+    }
+
+
+}
