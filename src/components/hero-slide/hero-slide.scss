@@ -1,0 +1,30 @@
+@import '~scss/base/_base.scss';
+@import '~scss/helpers/_helpers.scss';
+
+.hero-slide {
+    width: 100%;
+    // background-color: $primary-color;
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__image {
+        width: 50%;
+    }
+
+    &__content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+
+    }
+
+    &__title {
+        @extend %heading-font;
+        @include h1-font-sizes();
+    }
+
+}

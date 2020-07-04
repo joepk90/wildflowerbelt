@@ -1,0 +1,23 @@
+@import '~scss/base/_base.scss';
+@import '~scss/helpers/_helpers.scss';
+
+.promo-button {
+    
+    &__wrapper {
+        
+    }
+
+    &__link {
+    @extend %default-animation;
+    font-size: $h2-font-size;
+    background-color: $background-primary;
+    padding: rem(10px) rem(20px);
+    border-radius: rem(10px);
+    color: $white;
+    &:hover {
+        background-color: saturate($background-primary, 20%);
+        color: $white;
+    }
+    }
+
+}
