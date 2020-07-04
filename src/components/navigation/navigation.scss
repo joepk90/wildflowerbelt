@@ -1,3 +1,6 @@
+@import '~scss/base/_base.scss';
+@import '~scss/helpers/_helpers.scss';
+
 .navigation {
     display: flex;
     justify-content: flex-end;
@@ -9,9 +12,13 @@
     }
 
     &__menu-item {
-        margin: 0 5px;
+        margin: 0 rem(10px);
     }
 
-    &__menu-item-item {}
+    &__menu-item-link {
+        @include navigation-link-color();
+        font-size: $font-size-small;
+        font-family: $styled-font;
+    }
 
 }
