@@ -12,7 +12,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "~components/header/header";
 import HeroSlide from "~components/hero-slide/hero-slide";
 
-import "normalize.css";
 // import "./layout.css"
 
 
