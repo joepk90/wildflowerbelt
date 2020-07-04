@@ -21,6 +21,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "normalize.css": "^8.0.1",
     "prettier": "2.0.5"
   },
   "keywords": [
