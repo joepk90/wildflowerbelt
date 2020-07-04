@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 import Logo from "~components/logo/logo";
-import Navigation from "../navigation";
+import Navigation from "~components/navigation/navigation";
 
 import '~components/header/header.scss';
 
