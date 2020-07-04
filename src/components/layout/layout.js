@@ -9,8 +9,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header/header";
+import Header from "~components/header/header";
+import HeroSlide from "~components/hero-slide/hero-slide";
+
 import "./layout.css"
+
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -31,6 +34,7 @@ const Layout = ({ children }) => {
 
     <React.Fragment>
       <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
+      <HeroSlide/> {/* should this be added here? potentially it should be passed into main? */}
       <div
         style={{
           margin: `0 auto`,
