@@ -1,0 +1,76 @@
+/*
+    Whites, Greys, Blacks
+*/
+$white: #fff;
+$white-smoke: #f4f4f4;
+$zircon-grey: #e7e8e9;
+$silver: #c5c5c5;
+$nobel-grey: #999999;
+$dim-grey: #717171;
+// $mortar-grey: #555555;
+$gondola-grey: #353535;
+$nero-grey: #161616;
+$black: #000;
+
+/*
+    Colors
+*/
+$buttercup: #dd9425;
+$endeavour: #2d5c88;
+$curious-blue: #428bca;
+// $air-force-blue: #6c8dab;
+
+/*
+    Primary Colors
+*/
+$color-primary: $buttercup;
+$color-secondary: $endeavour;
+
+/*
+    Text Colors
+*/
+$text-white: $white;
+$text-subtle-white: $zircon-grey;
+$text-light-grey: $nobel-grey;
+$text-grey: $dim-grey;
+$text-dark-grey: $gondola-grey;
+$text-black: $black;
+
+/*
+    Text Utility Colors
+*/
+$text-primary: $buttercup;
+$text-secondary: $color-secondary;
+$text-base-color: $text-dark-grey;
+
+/*
+    Background Shades
+*/
+$background-white: $white;
+$background-subtle-white: $white-smoke;
+$background-light-grey: $zircon-grey;
+$background-grey-: $silver;
+$background-dark-grey: $gondola-grey;
+$background-black: $black;
+$background-primary: $buttercup;
+$background-secondary: $endeavour;
+
+/*
+    Border Colors
+*/
+$subtle-white-border: $white-smoke;
+$light-grey-border: $zircon-grey;
+$grey-border: $nobel-grey;
+$dark-grey-border: $gondola-grey;
+
+/*
+    Link Colors
+*/
+$link-color: $text-secondary;
+$link-color-hover: $curious-blue;
+$light-link-color: $text-light-grey;
+$light-link-hover: $text-white;
+$dark-link-color: $text-grey;
+$dark-link-hover: $text-dark-grey;
+
+

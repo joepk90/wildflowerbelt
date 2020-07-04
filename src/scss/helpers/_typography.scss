@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+%base-font {
+  font-family: $base-font;
+  font-weight: $font-weight-regular;
+}
+
+%heading-font {
+  font-family: $heading-font;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+}
+
+@mixin link-color {
+  color: $link-color;
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+@mixin light-link-color {
+  color: $light-link-color;
+  &:hover {
+    color: $light-link-hover;
+  }
+}
+  
+@mixin dark-link-color {
+  color: $dark-link-color;
+  &:hover {
+      color: $dark-link-hover;
+  }
+}
+
+@mixin navigation-link-color {
+    color: $text-dark-grey;
+    &:hover {
+        color: $text-secondary;
+    }
+  }
+  
+@mixin h1-font-sizes() {
+  font-size: $h1-mobile-font-size;
+  @include breakpoint($breakpoint-tablet) {
+    font-size: $h1-font-size;
+  }
+}
+  
+@mixin h2-font-sizes() {
+  font-size: $h2-mobile-font-size;
+  @include breakpoint($breakpoint-tablet) {
+    font-size: $h2-font-size;
+  }
+}
+  
+@mixin h3-font-sizes() {
+  font-size: $h3-mobile-font-size;
+  @include breakpoint(s$breakpoint-tablet) {
+    font-size: $h3-font-size;
+  }
+}
