@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import Image from "./image"
+import Image from "../image";
+
+import '~components/logo/logo.scss';
 
 class Logo extends Component {
     state = {  }

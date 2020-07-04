@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-import Logo from "../logo";
+import Logo from "~components/logo/logo";
 import Navigation from "../navigation";
 
 import '~components/header/header.scss';
