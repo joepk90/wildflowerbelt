@@ -2,8 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-import Logo from "./logo"
-import Navigation from "./navigation"
+import Logo from "../logo";
+import Navigation from "../navigation";
+
+import '~components/header/header.scss';
 
 const Header = ({ siteTitle, menuLinks }) => (
   <header className="site-header">
