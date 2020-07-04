@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Image from "../image";
+import Image from "~components/image/image";
 
 import '~components/logo/logo.scss';
 
