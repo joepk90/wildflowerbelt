@@ -1,0 +1,11 @@
+@import '~scss/base/_base.scss';
+@import '~scss/helpers/_helpers.scss';
+
+.content {
+    max-width: rem(720px);
+    text-align: center;
+    margin: auto;
+
+    &__paragraph {}
+
+}
