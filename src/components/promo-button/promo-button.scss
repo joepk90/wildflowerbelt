@@ -10,12 +10,12 @@
     &__link {
     @extend %default-animation;
     font-size: $h2-font-size;
-    background-color: $background-primary;
+    background-color: $background-secondary;
     padding: rem(10px) rem(20px);
     border-radius: rem(10px);
     color: $white;
     &:hover {
-        background-color: saturate($background-primary, 20%);
+        background-color: saturate($background-secondary, 20%);
         color: $white;
     }
     }
