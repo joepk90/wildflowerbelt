@@ -1,8 +1,13 @@
+@import '~scss/base/_base.scss';
+@import '~scss/helpers/_helpers.scss';
+
 .site-header {
+    border-bottom: 1px rgba($border-primary, 0.1) solid;
 
     &__container {
         display: flex;
         width: 100%;
+        padding: rem(10px) 0;
     }
 
     &__branding {
