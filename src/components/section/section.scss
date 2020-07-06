@@ -3,4 +3,10 @@
 
 .page-section {
     margin: rem(50px) auto;
+    padding: rem(25px) 0;
+
+    &:last-of-type {
+        margin: 0 auto;
+    }
+
 }
