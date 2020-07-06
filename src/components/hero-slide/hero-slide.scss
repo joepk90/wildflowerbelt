@@ -25,6 +25,7 @@
     &__title {
         @extend %heading-font;
         @include h1-font-sizes();
+        text-align: right;
     }
 
 }
