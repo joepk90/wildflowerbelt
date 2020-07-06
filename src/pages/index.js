@@ -24,6 +24,25 @@ const IndexPage = () => (
       <Title options={{align: 'center'}}>{indexData.title}</Title>
       <Content content={indexData.description} />
     </Section>
+
+
+    <Section>
+      <div className="grid grid--3">
+
+        <Link className="grid-item" to="/product-details/">
+          <Image alt="Snap On Feature" filename="snap-on-feature.jpg" />
+        </Link>
+
+        <Link className="grid-item" to="/product-details/">
+          <Image alt="Embossed Pattern" filename="embossed-pattern.jpg" />
+        </Link>
+
+        <Link className="grid-item" to="/product-details/">
+          <Image alt="Free Shipping" filename="free-shipping.jpg" />
+        </Link>
+
+      </div>
+    </Section>
   
     <Link to="/page-2/">Go to page 2</Link> <br />
     <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
