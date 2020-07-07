@@ -11,7 +11,7 @@ import "~components/common/grid/grid.scss"; // custom overrides
 // TODO create utility function where breakpoint sizes are defined.
 // TODO Investigate if it's possible to share between the definitions with the breakpoints.scss file.
 const styles = {
-breakpoints: { xs: 0, sm: 480,  md: 600, lg: 840, xl: 1280 },
+breakpoints: { xs: 0, sm: 480,  md: 600, lg: 720, xl: 840},
 containerMaxWidths: { sm: 1180,  md: 1180, lg: 1180, xl: 1180 },
 columns: 12,
 gutterWidth: 30
