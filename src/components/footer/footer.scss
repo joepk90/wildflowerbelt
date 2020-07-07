@@ -5,32 +5,32 @@
     background-color:$background-light-grey;
     padding: rem(50px) rem(15px) rem(15px);
 
+    // TODO use Section Component to manage this
     &__section {
         @extend %container;
-        display: flex;
         padding: rem(20px) 0;
-        flex-direction: column;
-        @include breakpoint($breakpoint-tablet) {
-            flex-direction: row;
+    }
+
+    &__title {
+        @include h3-font-sizes();
+        line-height:2em;
+        text-align: center;
+        @include breakpoint($breakpoint-handset-landscape) {
+            text-align: left;
         }
     }
 
     &__item {
         display: flex;
         flex-direction: column;
-        
-        // padding: 0 rem(10px); // maybe I should be using a grid here?
-        width: 100%;
-        @include breakpoint($breakpoint-tablet) {
-            width: 50%;
-            align-items: flex-start;
+        align-items: center;;
+        text-align: center;
+        margin-bottom: rem(20px);
+        @include breakpoint($breakpoint-handset-landscape) {
+            width: 80%;
+            flex-direction: row;
+            text-align: left;
         }
-        
-    }
-
-    &__about {
-        display: flex;
-        width: 80%;
     }
 
     &__about-us {
@@ -38,14 +38,18 @@
         padding-left: rem(15px);
     }
 
-    &__title {
-        @include h3-font-sizes();
-        line-height:2em
-    }
-
     &__copyright {
         font-size: $font-size-small;
         color: $text-light-grey;
+    }
+
+    .site-icon {
+        max-width: 50px;
+        margin-bottom: rem(10px);
+        @include breakpoint($breakpoint-handset-landscape) {
+            max-width: unset;
+            margin: 0;
+        }
     }
 
 }
