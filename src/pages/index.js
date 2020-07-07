@@ -9,6 +9,7 @@ import Section from "~components/section/section";
 import Content from "~components/content/content";
 import HeroSlide from "~components/hero-slide/hero-slide";
 import SEO from "~components/seo";
+import { GridContainer, Row, Col } from '~components/common/grid/grid';
 
 import "~scss/pages/index.scss"
 
@@ -27,21 +28,30 @@ const IndexPage = () => (
 
 
     <Section>
-      <div className="grid grid--3">
+      <GridContainer>
+        <Row>
 
-        <Link className="grid-item" to="/product-details/">
-          <Image alt="Snap On Feature" filename="snap-on-feature.jpg" />
-        </Link>
+          <Col xs={12} sm={4}>
+            <Link to="/product-details/">
+              <Image alt="Snap On Feature" filename="snap-on-feature.jpg" />
+            </Link>
+          </Col>
 
-        <Link className="grid-item" to="/product-details/">
-          <Image alt="Embossed Pattern" filename="embossed-pattern.jpg" />
-        </Link>
+          <Col xs={12} sm={4}>
+            <Link to="/product-details/">
+              <Image alt="Embossed Pattern" filename="embossed-pattern.jpg" />
+            </Link>
+          </Col>
+          
+          <Col xs={12} sm={4}>
+            <Link to="/product-details/">
+              <Image alt="Free Shipping" filename="free-shipping.jpg" />
+            </Link>
+          </Col>
+        
+        </Row>
+      </GridContainer>
 
-        <Link className="grid-item" to="/product-details/">
-          <Image alt="Free Shipping" filename="free-shipping.jpg" />
-        </Link>
-
-      </div>
     </Section>
   
     <Link to="/page-2/">Go to page 2</Link> <br />
