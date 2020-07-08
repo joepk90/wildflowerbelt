@@ -1,0 +1,16 @@
+.reviews {
+    text-align: center;
+    width: 600px;
+    margin: auto;
+}
+
+
+.review {
+    &__quote {
+        display: block;
+    }
+
+    &__user {
+        
+    }
+}
