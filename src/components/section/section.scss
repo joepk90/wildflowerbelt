@@ -19,6 +19,18 @@
         padding-bottom: rem(25px)
     }
 
+    &--padding-small {
+        padding: rem(10px) 0;
+    }
+
+    &--padding-top-small {
+        padding-top: rem(10px);
+    }
+
+    &--padding-bottom-small {
+        padding-bottom: rem(10px)
+    }
+
     &--padding-large {
         padding: rem(50px) 0;
     }

@@ -22,6 +22,22 @@ const classModifiers = function(options) {
         classList.push('page-section--padding-bottom');
     }
 
+    /** PADDING SMALL OPTIONS */
+
+    if (options.paddingSmall && options.paddingSmall === true) {
+        classList.push('page-section--padding-small');
+    }
+
+    if (options.paddingTopSmall && options.paddingTopSmall === true) {
+        classList.push('page-section--padding-top-small');
+    }
+
+    if (options.paddingBottomSmall && options.paddingBottomSmall === true) {
+        classList.push('page-section--padding-bottom-small');
+    }
+
+    /** PADDING LARGE OPTIONS */
+
     if (options.paddingLarge && options.paddingLarge === true) {
         classList.push('page-section--padding-large');
     }
@@ -48,6 +64,8 @@ const classModifiers = function(options) {
         classList.push('page-section--margin-bottom');
     }
 
+    /** MARGIN LARGE OPTIONS */
+
     if (options.marginLarge && options.marginLarge === true) {
         classList.push('page-section--margin-large');
     }
@@ -61,7 +79,7 @@ const classModifiers = function(options) {
     }
     
     if (classList.length === 0) {
-        return
+        return '';
     }
 
     return ' ' + classList.join(' ')
