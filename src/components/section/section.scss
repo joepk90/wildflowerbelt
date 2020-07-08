@@ -8,5 +8,30 @@
     &:last-of-type {
         margin: 0 auto;
     }
+    
+    &--padding {
+        padding-top: rem(25px);
+        padding-bottom: rem(25px);
+    }
+
+    &--padding-top {
+        padding-top: rem(25px);
+    }
+    &--padding-bottom {
+        padding-bottom: rem(25px)
+    }
+
+    &--margin {
+        margin-top: rem(50px);
+        margin-bottom: rem(50px);
+    }
+
+    &--margin-top {
+        margin-top: rem(50px);
+    }
+
+    &--margin-bottom {
+        margin-bottom: rem(50px);
+    }
 
 }
