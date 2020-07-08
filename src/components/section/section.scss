@@ -2,35 +2,56 @@
 @import '~scss/helpers/_helpers.scss';
 
 .page-section {
-    margin: rem(50px) auto;
-    padding: rem(25px) 0;
 
     &:last-of-type {
         margin: 0 auto;
     }
-    
+
     &--padding {
-        padding-top: rem(25px);
-        padding-bottom: rem(25px);
+        padding: rem(25px) 0;
     }
 
-    &--padding-top {
+    &--padding-top{
         padding-top: rem(25px);
     }
+
     &--padding-bottom {
         padding-bottom: rem(25px)
     }
 
+    &--padding-large {
+        padding: rem(50px) 0;
+    }
+
+    &--padding-top-large {
+        padding-top: rem(50px);
+    }
+
+    &--padding-bottom-large {
+        padding-bottom: rem(50px)
+    }
+
     &--margin {
-        margin-top: rem(50px);
-        margin-bottom: rem(50px);
+        margin: rem(25px) auto;
     }
 
     &--margin-top {
-        margin-top: rem(50px);
+        margin-top: rem(25px);
     }
 
     &--margin-bottom {
+        margin-bottom: rem(25px);
+    }
+
+    &--margin-large {
+        margin: rem(50px) auto;
+    }
+
+    &--margin-top-large {
+        margin-top: rem(50px);
+    }
+
+    &--margin-bottom-large {
         margin-bottom: rem(50px);
     }
 
