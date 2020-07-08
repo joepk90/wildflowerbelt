@@ -18,13 +18,13 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     
-    <Section>
+    <Section options={{paddingLarge: true}}>
       <Container options={{fullWidth: true}}>
         <HeroSlide/> {/* should this be added here? potentially it should be passed into main? */}
       </Container>
     </Section>
     
-    <Section options={{padding: true, margin: true}}>
+    <Section options={{ paddingLarge: true}}>
       <Container>
         <Title options={{align: 'center'}}>{indexData.title}</Title>
         <Content content={indexData.description} />
@@ -32,7 +32,7 @@ const IndexPage = () => (
     </Section>
 
 
-    <Section>
+    <Section options={{paddingLarge: true}}>
       <Container>
         <GridContainer>
           <Row>
