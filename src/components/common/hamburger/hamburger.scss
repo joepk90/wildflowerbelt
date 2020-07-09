@@ -1,0 +1,12 @@
+@import '~scss/base/_base.scss';
+@import '~scss/helpers/_helpers.scss';
+@import "hamburgers-settings"; //overrides the hamburgers settings included in the parent theme
+@import "hamburgers/_sass/hamburgers/hamburgers.scss";
+
+.hamburger {
+    padding-bottom: 4px;
+
+    @include breakpoint($breakpoint-tablet) {
+        display: none;
+    }
+}
