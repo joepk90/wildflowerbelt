@@ -11,24 +11,22 @@ import '~components/header/header.scss';
 
 const Header = ({ siteTitle, menuLinks }) => (
   <header className="site-header">
-    <Section options={{paddingSmall: true}}>
-      <Container>
+    <Section options={{ paddingSmall: true }}>
 
-        <div className="site-header__container container" >
+      <div className="site-header__container" >
 
-          <div className="site-header__branding">
-            <Link to="/" title="{siteTitle}">
-              <Logo />
-            </Link>
-          </div>
-
-          <div className="site-header__navigation">
-            <Navigation menuLinks={menuLinks}/>
-          </div>
-
+        <div className="site-header__branding">
+          <Link to="/" title="{siteTitle}">
+            <Logo />
+          </Link>
         </div>
 
-      </Container>
+        <div className="site-header__navigation">
+          <Navigation menuLinks={menuLinks} />
+        </div>
+
+      </div>
+
     </Section>
   </header>
 )

@@ -3,23 +3,128 @@
 
 .navigation {
     display: flex;
+    flex-direction: column;
+    @include breakpoint($navigation-breakpoint) {
+        flex-direction: row;
+    }
+
+    &__mobile-toggle {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        background-color: $color-primary;
+
+        @include breakpoint($navigation-breakpoint) {
+            display: none;
+        }
+    }
 
     &__menu-items {
+        width: 100%;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         list-style: none;
+        margin: 0 auto;
         padding: 0;
-        margin: 0;
+        height: 0;
+        overflow: hidden;
+
+        @include breakpoint($navigation-breakpoint) {
+            flex-direction: row;
+            height: auto;
+            overflow: visible;
+        }
+
+        &.is-open {
+            height: auto;
+        }
+
     }
 
     &__menu-item {
-        margin-right: rem(25px);
+        width: 100%;
+        padding: rem(3px) rem(8px);
+        background-color: desaturate(rgba($color-primary, 0.3), 30%); // TODO variablise
+        transition: background-color $animation-time ease-in-out;
+        @include breakpoint($navigation-breakpoint) {
+            transition: none;
+        }
+        // position: relative; // used for sub-menu hamburger positioning
+
+        @include breakpoint($navigation-breakpoint) {
+            width: auto;
+            background-color: transparent;
+        }
+
+        &:hover {
+            background-color: desaturate(rgba($color-primary, 0.6), 30%);  // TODO variablise
+            @include breakpoint($navigation-breakpoint) {
+                background-color: transparent
+            }
+        }
     }
 
     &__menu-item-link {
-        @include navigation-link-color();
+        width: 100%;
+        display: block;
         font-size: $font-size-small;
         font-family: $styled-font;
+        @include dark-link-color();
+        @include breakpoint($navigation-breakpoint) {
+            @include navigation-link-color();
+        }
+
+
+        
+        
+    }
+
+    /*
+    * SUB MENU STYLES
+    */
+
+    &__sub-menu {
+        position: relative;
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        // transition: all $animation-time ease-in-out;
+        list-style: none;
+        
+        @include breakpoint($navigation-breakpoint) {
+            position: absolute;
+            top: 100px;
+        }
+
+        // TODO use something like $this to reference main-navigation 
+        .navigation__list-item {
+          
+            @include breakpoint($navigation-breakpoint) {
+                height: 70px;
+            }
+
+            &:hover {
+                background-color: $background-light-grey;
+            }
+        }
+
+        .navigation__link {
+            padding: rem(10px) 0 rem(10px) rem(20px);
+            
+            @include breakpoint($navigation-breakpoint) {
+                padding: rem(30px) 0 rem(20px) rem(20px);
+            }
+
+        }
+
+        &.is-open {
+            height: auto;
+            opacity: 1;
+        }
+
     }
 
 }
