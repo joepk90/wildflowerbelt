@@ -19,22 +19,22 @@ import "~scss/pages/index.scss"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    
-    <Section options={{paddingLarge: true}}>
-      <Container options={{fullWidth: true}}>
-        <HeroSlide/> {/* should this be added here? potentially it should be passed into main? */}
+
+    <Section options={{ paddingLarge: true }}>
+      <Container options={{ fullWidth: true }}>
+        <HeroSlide /> {/* should this be added here? potentially it should be passed into main? */}
       </Container>
     </Section>
-    
-    <Section options={{ paddingLarge: true}}>
+
+    <Section options={{ paddingLarge: true }}>
       <Container>
-        <Title options={{align: 'center'}}>{indexData.title}</Title>
+        <Title options={{ align: 'center' }}>{indexData.title}</Title>
         <Content content={indexData.description} />
       </Container>
     </Section>
 
 
-    <Section options={{paddingLarge: true}}>
+    <Section options={{ paddingLarge: true }}>
       <Container>
         <GridContainer>
           <Row>
@@ -50,24 +50,24 @@ const IndexPage = () => (
                 <Image alt="Embossed Pattern" filename="embossed-pattern.jpg" />
               </Link>
             </Col>
-            
+
             <Col xs={12} sm={4}>
               <Link to="/product-details/">
                 <Image alt="Free Shipping" filename="free-shipping.jpg" />
               </Link>
             </Col>
-          
+
           </Row>
         </GridContainer>
       </Container>
     </Section>
 
-    <Section options={{ paddingLarge: true}}>
+    <Section options={{ paddingLarge: true }}>
       <Container>
         <Reviews reviewsData={ReviewData.reviews}></Reviews>
       </Container>
     </Section>
-  
+
     <Link to="/page-2/">Go to page 2</Link> <br />
     <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
