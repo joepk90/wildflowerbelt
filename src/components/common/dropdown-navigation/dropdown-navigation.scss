@@ -1,7 +1,7 @@
 @import '~scss/base/_base.scss';
 @import '~scss/helpers/_helpers.scss';
 
-.navigation {
+.dropdown-navigation {
     display: flex;
     flex-direction: column;
     @include breakpoint($breakpoint-navigation) {
@@ -24,6 +24,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        justify-content: flex-end;
         list-style: none;
         margin: 0 auto;
         padding: 0;

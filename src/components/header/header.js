@@ -3,8 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 import Logo from "~components/logo/logo";
-import Navigation from "~components/navigation/navigation";
-import Container from "~components/container/container";
+import DropDownNavigation from "~components/common/dropdown-navigation/dropdown-navigation";
 import Section from "~components/section/section";
 
 import '~components/header/header.scss';
@@ -22,7 +21,7 @@ const Header = ({ siteTitle, menuLinks }) => (
         </div>
 
         <div className="site-header__navigation">
-          <Navigation menuLinks={menuLinks} />
+          <DropDownNavigation menuLinks={menuLinks} />
         </div>
 
       </div>

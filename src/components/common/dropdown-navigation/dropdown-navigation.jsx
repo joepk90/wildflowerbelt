@@ -3,9 +3,9 @@ import { Link } from "gatsby"
 
 import Hamburger from '~components/common/hamburger/hamburger';
 
-import '~components/navigation/navigation.scss';
+import '~components/common/dropdown-navigation/dropdown-navigation.scss';
 
-class Navigation extends Component {
+class DropDownNavigation extends Component {
 
     state = {
         isOpen: false
@@ -17,7 +17,7 @@ class Navigation extends Component {
 
     renderClassList() {
 
-        let classList = "navigation__menu-items";
+        let classList = "dropdown-navigation__menu-items";
 
         if (this.state.isOpen === true) {
             classList = classList + " is-open";
@@ -33,16 +33,16 @@ class Navigation extends Component {
         // Create a dropdown navigatin component which uses the navigation component + the hamburger component
         // 
         return (
-            <nav className="navigation">
+            <nav className="dropdown-navigation">
 
-                <div className="navigation__mobile-toggle">
+                <div className="dropdown-navigation__mobile-toggle">
                     <Hamburger onClick={this.toggleOpenState} />
                 </div>
 
                 <ul className={this.renderClassList()}>
                     {this.props.menuLinks.map(link => (
-                        <li key={link.name} className="navigation__menu-item">
-                            <Link to={link.link} className="navigation__menu-item-link">
+                        <li key={link.name} className="dropdown-navigation__menu-item">
+                            <Link to={link.link} className="dropdown-navigation__menu-item-link">
                                 {link.name}
                             </Link>
                         </li>
@@ -53,4 +53,4 @@ class Navigation extends Component {
     }
 }
 
-export default Navigation;
+export default DropDownNavigation;
