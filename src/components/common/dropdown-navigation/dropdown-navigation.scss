@@ -25,11 +25,9 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        list-style: none;
-        margin: 0 auto;
-        padding: 0;
         height: 0;
         overflow: hidden;
+        @extend %list-style-none;
 
         @include breakpoint($breakpoint-navigation) {
             flex-direction: row;
@@ -90,10 +88,8 @@
         overflow: hidden;
         height: 0;
         opacity: 0;
-        padding: 0;
-        margin: 0;
         // transition: all $animation-time ease-in-out;
-        list-style: none;
+        @extend %list-style-none;
         
         @include breakpoint($breakpoint-navigation) {
             position: absolute;
