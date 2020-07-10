@@ -1,0 +1,31 @@
+@import '~scss/base/_base.scss';
+@import '~scss/helpers/_helpers.scss';
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint($breakpoint-navigation) {
+        flex-direction: row;
+    }
+
+    &__menu-items {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    &__menu-item {
+        padding: 0 rem(10px);
+        @include breakpoint($breakpoint-navigation) {
+            padding: 0 rem(20px) 0 0;
+        }
+    }
+
+    &__menu-item-link {
+        font-size: $font-size-small;
+        font-family: $styled-font;
+        @include navigation-link-color();
+    }
+}
