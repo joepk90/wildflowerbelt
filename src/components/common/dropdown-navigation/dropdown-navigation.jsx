@@ -28,10 +28,6 @@ class DropDownNavigation extends Component {
 
     render() {
 
-        // TODO this needs to change as the footer navigation also has a hamburger - This logic should be split up. 
-        // Create a generic navigation component
-        // Create a dropdown navigatin component which uses the navigation component + the hamburger component
-        // 
         return (
             <nav className="dropdown-navigation">
 
