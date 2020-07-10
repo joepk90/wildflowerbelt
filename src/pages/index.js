@@ -9,8 +9,8 @@ import Title from "~components/title/title";
 import Container from "~components/container/container";
 import Section from "~components/section/section";
 import Content from "~components/content/content";
-import HeroSlide from "~components/hero-slide/hero-slide";
 import Reviews from "~components/reviews/reviews";
+import PromoCard from '~components/promo-card/promo-card';
 import SEO from "~components/seo";
 import { GridContainer, Row, Col } from '~components/common/grid/grid';
 
@@ -22,7 +22,23 @@ const IndexPage = () => (
 
     <Section options={{ paddingLarge: true }}>
       <Container options={{ fullWidth: true }}>
-        <HeroSlide /> {/* should this be added here? potentially it should be passed into main? */}
+
+        <GridContainer>
+          <Row>
+
+            <Col md={12} lg={6}>
+              <Link to="/product-details/">
+                <Image className="site-logo" alt="The Wildflower Belt" filename="wildflower-belt.jpg" />
+              </Link>
+            </Col>
+
+            <Col md={12} lg={5}>
+              <PromoCard title="Worn with Confidence" linkAttributes={{ url: '/product-details', title: 'Shop Now' }} />
+            </Col>
+
+          </Row>
+        </GridContainer>
+
       </Container>
     </Section>
 

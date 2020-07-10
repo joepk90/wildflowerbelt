@@ -7,3 +7,10 @@
         margin-bottom: rem(20px);
     }
 }
+
+.promo-card {
+    text-align: center;
+    @include breakpoint($breakpoint-handset-landscape) {
+        text-align: right;
+    }
+}
