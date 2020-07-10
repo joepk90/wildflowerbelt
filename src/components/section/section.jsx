@@ -2,7 +2,7 @@ import React from 'react';
 
 import "~components/section/section.scss";
 
-const classModifiers = function(options) {
+const classModifiers = function (options) {
 
     let classList = [];
 
@@ -77,7 +77,7 @@ const classModifiers = function(options) {
     if (options.marginBottomLarge && options.marginBottomLarge === true) {
         classList.push('page-section--margin-bottom-large');
     }
-    
+
     if (classList.length === 0) {
         return '';
     }
@@ -86,13 +86,13 @@ const classModifiers = function(options) {
 
 }
 
-const Section = ({children, options}) => {
+const Section = ({ children, options }) => {
 
     const modifiers = classModifiers(options);
 
-    return ( 
+    return (
         <section className={'page-section' + modifiers}>{children}</section>
-     );
+    );
 }
- 
+
 export default Section;

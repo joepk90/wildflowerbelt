@@ -4,7 +4,7 @@ import "~components/reviews/reviews.scss";
 
 const renderReview = (review, index) => {
 
-    if(!review.review || !review.user) return;
+    if (!review.review || !review.user) return;
 
     // TODO make review component?
     return (
@@ -17,11 +17,11 @@ const renderReview = (review, index) => {
     );
 }
 
-const Reviews = ({reviewsData}) => {
+const Reviews = ({ reviewsData }) => {
 
     console.log(reviewsData);
 
-    return ( 
+    return (
         <div className="reviews">
 
             <h2>Reviews</h2>
@@ -31,7 +31,7 @@ const Reviews = ({reviewsData}) => {
             })}
 
         </div>
-     );
+    );
 }
- 
+
 export default Reviews;

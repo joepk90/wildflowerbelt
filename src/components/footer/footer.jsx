@@ -7,10 +7,10 @@ import { GridContainer, Row, Col } from '~components/common/grid/grid';
 
 import '~components/footer/footer.scss';
 
-const Footer = ({menuLinks}) => {
-    return ( 
+const Footer = ({ menuLinks }) => {
+    return (
         <footer className="site-footer">
-            <Section options={{paddingTopLarge: true, marginBottom: true}}>
+            <Section options={{ paddingTopLarge: true, marginBottom: true }}>
                 <Container>
 
                     <GridContainer>
@@ -24,8 +24,8 @@ const Footer = ({menuLinks}) => {
                             </Col>
                             <Col sm={12} lg={6}>
                                 <p className="site-footer__title">Site Map</p>
-                                    <div className="site-footer__item">
-                                        <Navigation menuLinks={menuLinks}/>
+                                <div className="site-footer__item">
+                                    <Navigation menuLinks={menuLinks} />
                                 </div>
                             </Col>
                         </Row>
@@ -34,17 +34,17 @@ const Footer = ({menuLinks}) => {
                 </Container>
             </Section>
 
-            <Section options={{paddingBottom: true}}>
+            <Section options={{ paddingBottom: true }}>
                 <Container>
 
                     <span className="site-footer__copyright">
-                            © Wildflower Belt {new Date().getFullYear()}
+                        © Wildflower Belt {new Date().getFullYear()}
                     </span>
 
                 </Container>
             </Section>
         </footer>
-     );
+    );
 }
- 
+
 export default Footer;

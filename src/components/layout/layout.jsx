@@ -29,15 +29,15 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  
+
   return (
 
     <React.Fragment>
 
       <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
 
-        <main>{children}</main>
-      
+      <main>{children}</main>
+
       <Footer menuLinks={data.site.siteMetadata.menuLinks}></Footer>
 
     </React.Fragment>

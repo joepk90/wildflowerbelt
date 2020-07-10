@@ -10,14 +10,14 @@ const renderContentData = (data, index) => {
     }
 }
 
-const Content = ({content}) => {
-    return ( 
+const Content = ({ content }) => {
+    return (
         <div className="content">
             {content.map((data, index) => {
                 return renderContentData(data, index);
             })}
         </div>
-     );
+    );
 }
- 
+
 export default Content;
