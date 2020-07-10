@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '~components/icon/icon';
-import Navigation from '~components/navigation/navigation';
+import Navigation from '~components/common/navigation/navigation';
 import Container from '~components/container/container';
 import Section from '~components/section/section';
 import { GridContainer, Row, Col } from '~components/common/grid/grid';

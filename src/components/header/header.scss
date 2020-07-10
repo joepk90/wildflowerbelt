@@ -4,29 +4,54 @@
 .site-header {
 
     &__container {
+        @extend %container;
         display: flex;
+        flex-direction: column;
         width: 100%;
-        padding: rem(10px) 0;
+        padding: 0;
+
+        @include breakpoint($breakpoint-navigation) {
+            flex-direction: row;
+        }
+
     }
 
     &__branding {
-        width: 50%;
+        width: 100%;
+        @include breakpoint($breakpoint-navigation) {
+            width: 50%
+        }
+
+        // TODO this looks way to specific. this is used to control the logo no that a container/section isn't used.
+        // TODO would be good to get rid of the below code and find less custom way of dealing with this.
+        padding: 0 0 rem(10px) rem(15px);
+        @include breakpoint($breakpoint-desktop) {
+            padding: 0 0 rem(10px) 0;
+        }
     }
 
     &__navigation {
-        width: 50%;
+        width: 100%;
+        @include breakpoint($breakpoint-navigation) {
+            width: 50%
+        }
     }
 
     .navigation {
         display: flex;
         justify-content: flex-end;
-    
+
         &__menu-items {
             display: flex;
             justify-content: flex-end;
             list-style: none;
         }
-    
-    }
 
+        &__menu-item {
+            margin-right: rem(10px);
+            @include breakpoint($breakpoint-tablet) {
+                margin-right: rem(25px);
+            }
+        }
+    }
 }
