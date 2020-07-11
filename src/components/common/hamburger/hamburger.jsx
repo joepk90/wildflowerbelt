@@ -34,12 +34,12 @@ class Hamburger extends Component {
     render() {
         return (
             <button
-                class={this.renderClassList()}
+                className={this.renderClassList()}
                 type="button"
                 onClick={() => this.handleClick()}
             >
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
+                <span className="hamburger-box">
+                    <span className="hamburger-inner"></span>
                 </span>
             </button>
         );
