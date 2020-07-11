@@ -27,31 +27,51 @@
             "size": "extra-small",
             "width": "3.8",
             "length": "75",
-            "unit": "cm"
+            "unit": "cm",
+            "fit-range": {
+                "min": "65",
+                "max": "75"
+            }
         },
         {
             "size": "small",
             "width": "3.8",
             "length": "93",
-            "unit": "cm"
+            "unit": "cm",
+            "fit-range": {
+                "min": "73",
+                "max": "83"
+            }
         },
         {
             "size": "medium",
             "width": "3.8",
             "length": "100",
-            "unit": "cm"
+            "unit": "cm",
+            "fit-range": {
+                "min": "80",
+                "max": "90"
+            }
         },
         {
             "size": "large",
             "width": "3.8",
             "length": "108",
-            "unit": "cm"
+            "unit": "cm",
+            "fit-range": {
+                "min": "88",
+                "max": "98"
+            }
         },
         {
             "size": "extra-large",
             "width": "3.8",
             "length": "123",
-            "unit": "cm"
+            "unit": "cm",
+            "fit-range": {
+                "min": "103",
+                "max": "113"
+            }
         }
     ],
     "material": "Bonded PU Leather",
