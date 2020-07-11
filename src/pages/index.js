@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { pageLinks } from "~utilities/utilities.js"
 import indexData from "~content/index.json"
 import ReviewData from "~content/reviews.json"
 import Layout from "~components/layout/layout";
@@ -27,13 +28,13 @@ const IndexPage = () => (
           <Row>
 
             <Col md={12} lg={6}>
-              <Link to="/product-details/">
+              <Link to={pageLinks.wildflowerbelt}>
                 <Image className="site-logo" alt="The Wildflower Belt" filename="wildflower-belt.jpg" />
               </Link>
             </Col>
 
             <Col md={12} lg={5}>
-              <PromoCard title="Worn with Confidence" linkAttributes={{ url: '/product-details', title: 'Shop Now' }} />
+              <PromoCard title="Worn with Confidence" linkAttributes={{ url: pageLinks.wildflowerbelt, title: 'Shop Now' }} />
             </Col>
 
           </Row>
@@ -56,19 +57,19 @@ const IndexPage = () => (
           <Row>
 
             <Col xs={12} sm={4}>
-              <Link to="/product-details/">
+              <Link to={pageLinks.wildflowerbelt}>
                 <Image alt="Snap On Feature" filename="snap-on-feature.jpg" />
               </Link>
             </Col>
 
             <Col xs={12} sm={4}>
-              <Link to="/product-details/">
+              <Link to={pageLinks.wildflowerbelt}>
                 <Image alt="Embossed Pattern" filename="embossed-pattern.jpg" />
               </Link>
             </Col>
 
             <Col xs={12} sm={4}>
-              <Link to="/product-details/">
+              <Link to={pageLinks.wildflowerbelt}>
                 <Image alt="Free Shipping" filename="free-shipping.jpg" />
               </Link>
             </Col>
