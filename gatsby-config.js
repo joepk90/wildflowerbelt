@@ -1,22 +1,25 @@
+// should page links just be set here and queried in lyaouts using graph QL?
+const pageLinks = require("./src/utilities/page-links.js");
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
-    menuLinks:[
+    menuLinks: [
       {
         name: 'Home',
-        link: '/',
+        link: pageLinks.home,
       },
       {
         name: 'The Wildflower Belt',
-        link: '/product',
+        link: pageLinks.wildflowerbelt,
       },
       {
         name: 'Contact',
-        link: '/contact',
+        link: pageLinks.contact,
       },
       {
         name: 'About',
-        link: '/about',
+        link: pageLinks.about,
       },
     ],
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
