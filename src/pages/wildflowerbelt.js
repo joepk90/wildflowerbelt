@@ -9,6 +9,7 @@ import ProductDetails from "~components/productDetails/productDetails";
 import Content from "~components/content/content";
 import Reviews from "~components/reviews/reviews";
 import DescriptionList from '../components/common/descriptionList/descriptionList';
+import Table from '../components/common/table/table';
 import Belt from "~classes/belt";
 import SEO from "~components/seo";
 
@@ -31,7 +32,15 @@ const WildflowerBelt = () => (
                     {
                         id: "description",
                         title: "Description",
-                        content: (<Content content={WildflowerbeltData.description} />),
+                        content: (
+                            <React.Fragment>
+                                <Content content={WildflowerbeltData.description} />
+                                <Table
+                                    columns={size, measurement, totalLength}
+                                    data={movies}
+                                />
+                            </React.Fragment>
+                        ),
                     },
                     {
                         id: "additional-info",
