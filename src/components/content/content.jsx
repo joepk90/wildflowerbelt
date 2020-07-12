@@ -2,19 +2,46 @@ import React from 'react';
 
 import '~components/content/content.scss';
 
+// TODO setup functionality allow multi-demensional arrays so you can list elements within elements
+// might be worth looking into an npm package to handle this logic?
+
 const renderContentData = (data, index) => {
 
-    // TODO make paragraph component?
-    if ('paragraph' in data) {
-        return (<p className="content__paragraph" key={index}>{data.paragraph}</p>);
-    } else if ('h5' in data) {
-        return (<h5 className="content__title" key={index}>{data.h5}</h5>);
-    }
+    const element = Object.keys(data);
+    const content = Object.values(data);
+
+    if (!element[0] || !content[0]) return '';
+
+    if (element[0] === 'read-more-link') return ''; // TODO setup optional read more link
+
+    // TODO setup check to catch incorrect html elements. Use try catch block?
+    return React.createElement(element[0], { key: index }, content[0]);
+
 }
 
-const Content = ({ content }) => {
+const renderClassList = (options) => {
+
+    let classList = "content";
+
+    if (!options) return classList;
+
+    if (options.textAlign === "center") {
+        classList = classList + " text-center";
+    }
+
+    if (options.contained === true) {
+        classList = classList + " content--contained";
+    }
+
+    return classList;
+
+}
+
+const Content = ({ content, options }) => {
+
+
     return (
-        <div className="content">
+        <div className={renderClassList(options)}>
             {content.map((data, index) => {
                 return renderContentData(data, index);
             })}

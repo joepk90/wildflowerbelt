@@ -2,10 +2,14 @@
 @import '~scss/helpers/_helpers.scss';
 
 .content {
-    max-width: rem(720px);
-    text-align: center;
-    margin: auto;
 
-    &__paragraph {}
+    &--contained {
+        max-width: rem(720px);
+        margin: auto;
+    }
+
+    p {
+        margin-bottom: rem(20px);   
+    }
 
 }

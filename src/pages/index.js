@@ -46,7 +46,7 @@ const IndexPage = () => (
     <Section options={{ paddingLarge: true }}>
       <Container>
         <Title options={{ align: 'center' }}>{indexData.title}</Title>
-        <Content content={indexData.description} />
+        <Content content={indexData.description} options={{ textAlign: "center", contained: true }} />
       </Container>
     </Section>
 
