@@ -16,6 +16,50 @@ class Belt {
 
     }
 
+    getTitle() {
+        return this._get('title');
+    }
+
+    getDescription() {
+        return this._get('summary');
+    }
+
+    getPrice() {
+        return this._get('price');
+    }
+
+    getProductCode() {
+        return this._get('code');
+    }
+
+    getProductOptions() {
+        const sizes = this._get('sizes');
+
+        if (sizes === null) return null;
+
+        let productOptions = [];
+
+        sizes.map((size, index) => {
+
+            const name = this._get('name', size);
+            const code = this._get('code', size);
+
+            if (name === null || code === null) return;
+
+            const rangeString = this.getSizeRangeString(size);
+
+            let nameString = name;
+            if (rangeString !== null) {
+                nameString = name + ` (${rangeString})`;
+            }
+
+            productOptions.push({ name: nameString, value: code });
+        })
+
+        return productOptions;
+
+    }
+
     getFirstWidthMeasurement() {
 
         const sizes = this._get('sizes');
