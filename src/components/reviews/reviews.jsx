@@ -8,18 +8,16 @@ const renderReview = (review, index) => {
 
     // TODO make review component?
     return (
-        <p className="review" key={index}>
+        <div className="review" key={index}>
             <blockquote className="review__quote">
                 "{review.review}”
             </blockquote>
             <em className="review__user">~ {review.user}</em>
-        </p>
+        </div>
     );
 }
 
 const Reviews = ({ reviewsData }) => {
-
-    console.log(reviewsData);
 
     return (
         <div className="reviews">
