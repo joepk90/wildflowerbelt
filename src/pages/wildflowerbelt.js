@@ -7,6 +7,7 @@ import Section from "~components/section/section";
 import ResponsiveTabs from "~components/common/responsiveTabs/responsiveTabs";
 import ProductDetails from "~components/productDetails/productDetails";
 import Content from "~components/content/content";
+import Reviews from "~components/reviews/reviews";
 import SEO from "~components/seo";
 
 const WildflowerBelt = () => (
@@ -35,7 +36,7 @@ const WildflowerBelt = () => (
                     {
                         id: "reviews",
                         title: "Reviews",
-                        content: "I am the reviews",
+                        content: (<Reviews reviewsData={WildflowerbeltData.reviews}></Reviews>)
                     },
                 ]}></ResponsiveTabs>
             </Container>
