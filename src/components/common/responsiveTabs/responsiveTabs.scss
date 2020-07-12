@@ -2,5 +2,47 @@
 @import '~scss/helpers/_helpers.scss';
 
 .responsive-tabs {
-    
+
+    $self: &;
+
+    &__tabs {
+        @extend %list-style-none;
+        display: flex;
+        border-bottom: 1px solid $border-light-grey;
+        margin-bottom: rem(25px);
+
+        @include breakpoint($breakpoint-handset-landscape) {
+            padding-left: rem(15px);
+        }
+    }
+
+    &__tab {
+        border: 1px solid $border-light-grey;
+        background-color: $background-subtle-white;
+        font-weight: $font-weight-bold;
+        font-size: $h6-font-size;
+
+        &.is-active {
+            background-color: $background-white;
+            pointer-events: none;
+
+            #{ $self }__tab-link {
+                color: $text-black;
+            }
+        }
+    }
+
+    &__tab-link {
+        @include dark-link-color();
+        padding: rem(5px) rem(15px);
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    &__panel {
+        display: none;
+        &.is-active {
+            display: block;
+        }
+    }
 }

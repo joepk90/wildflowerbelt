@@ -4,25 +4,91 @@ import "~components/common/responsiveTabs/responsiveTabs.scss";
 
 class ResponsiveTabs extends Component {
 
-    state = {}
+    state = {
+        activeTab: null,
+    }
 
-    handleTabClick = () => {
+    componentDidMount() {
+
+        if (this.props.tabsData.length === 0) return;
+
+        this.setState({ activeTab: this.props.tabsData[0].id });
+
+    }
+
+    renderTabClassList = (id) => {
+
+        let classList = "responsive-tabs__tab";
+
+        if (this.state.activeTab === id) {
+            return classList + ' is-active';
+        }
+
+        return classList;
+
+    }
+
+    handleTabClick = (index) => {
+
+        this.setState({ activeTab: this.props.tabsData[index].id })
 
     }
 
     renderTabs = () => {
 
         return (
-            <div className="responsive-tabs__tabs">
+            <ul className="responsive-tabs__tabs">
                 {this.props.tabsData.map((tab, index) => {
 
-                    if (!tab.title || !tab.content) return '';
+                    if (!tab.title || !tab.content || !tab.id) return '';
 
-                    return <div onClick={this.handleTabClick} key={index} className="responsive-tabs__tab-title">{tab.title}</div>
+                    return (
+                        <li className={this.renderTabClassList(tab.id)}
+                            key={tab.id}>
+                            <a href={'#' + tab.id}
+                                onClick={() => this.handleTabClick(index)}
+                                className="responsive-tabs__tab-link"
+                            >{tab.title}</a>
+                        </li>
+                    );
                 })}
-            </div>
+            </ul>
 
         );
+    }
+
+    renderPanelClassList = (id) => {
+
+        let classList = "responsive-tabs__panel";
+
+        if (this.state.activeTab === id) {
+            return classList + ' is-active';
+        }
+
+        return classList;
+
+    }
+
+    renderTabPanels = () => {
+
+        return (
+
+            <div className="responsive-tabs__panels">
+
+                {this.props.tabsData.map((tab) => {
+
+                    if (!tab.title || !tab.content || !tab.id) return '';
+
+                    return (
+                        <div key={tab.id} className={this.renderPanelClassList(tab.id)}>
+                            {tab.content}
+                        </div>
+                    )
+                })}
+
+            </div>
+        );
+
     }
 
     render() {
@@ -32,12 +98,9 @@ class ResponsiveTabs extends Component {
         return (
             <div className="responsive-tabs">
 
-
                 {this.renderTabs()}
 
-
-                <div className="responsive-tabs__content"></div>
-
+                {this.renderTabPanels()}
 
             </div>
         );
