@@ -24,53 +24,63 @@
     ],
     "sizes": [
         {
-            "size": "extra-small",
+            "code": "xs",
+            "name": "Extra Small",
             "width": "3.8",
             "length": "75",
             "unit": "cm",
-            "fit-range": {
+            "fitRange": {
                 "min": "65",
-                "max": "75"
+                "max": "75",
+                "unit": "cm"
             }
         },
         {
-            "size": "small",
+            "code": "sm",
+            "name": "Small",
             "width": "3.8",
             "length": "93",
             "unit": "cm",
-            "fit-range": {
+            "fitRange": {
                 "min": "73",
-                "max": "83"
+                "max": "83",
+                "unit": "cm"
             }
         },
         {
-            "size": "medium",
+            "code": "md",
+            "name": "Medium",
             "width": "3.8",
             "length": "100",
             "unit": "cm",
-            "fit-range": {
+            "fitRange": {
                 "min": "80",
-                "max": "90"
+                "max": "90",
+                "unit": "cm"
             }
         },
         {
-            "size": "large",
+            "code": "lg",
+            "name": "Large",
             "width": "3.8",
             "length": "108",
             "unit": "cm",
-            "fit-range": {
+            "fitRange": {
                 "min": "88",
-                "max": "98"
+                "max": "98",
+                "unit": "cm"
             }
         },
         {
-            "size": "extra-large",
+            "code": "xl",
+            "name": "Extra Large",
             "width": "3.8",
             "length": "123",
             "unit": "cm",
-            "fit-range": {
+            "fitRange": {
                 "min": "103",
-                "max": "113"
+                "max": "113",
+                "unit": "cm"
             }
         }
     ],
