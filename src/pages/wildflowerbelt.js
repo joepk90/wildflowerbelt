@@ -23,16 +23,19 @@ const WildflowerBelt = () => (
             <Container>
                 <ResponsiveTabs tabsData={[
                     {
-                        "title": "Descrition",
-                        "content": <Content content={WildflowerbeltData.description} />,
+                        id: "description",
+                        title: "Description",
+                        content: (<Content content={WildflowerbeltData.description} />),
                     },
                     {
-                        "title": "Additional Information",
-                        "content": "",
+                        id: "additional-info",
+                        title: "Additional Information",
+                        content: "I am the additional information",
                     },
                     {
-                        "title": "Reviews",
-                        "content": "",
+                        id: "reviews",
+                        title: "Reviews",
+                        content: "I am the reviews",
                     },
                 ]}></ResponsiveTabs>
             </Container>
