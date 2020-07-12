@@ -8,7 +8,12 @@ import ResponsiveTabs from "~components/common/responsiveTabs/responsiveTabs";
 import ProductDetails from "~components/productDetails/productDetails";
 import Content from "~components/content/content";
 import Reviews from "~components/reviews/reviews";
+import DescriptionList from '../components/common/descriptionList/descriptionList';
+import Belt from "~classes/belt";
 import SEO from "~components/seo";
+
+
+const wildflowerBelt = new Belt(WildflowerbeltData);
 
 const WildflowerBelt = () => (
     <Layout>
@@ -31,7 +36,33 @@ const WildflowerBelt = () => (
                     {
                         id: "additional-info",
                         title: "Additional Information",
-                        content: "I am the additional information",
+                        content: (<DescriptionList listData={[
+                            {
+                                id: "sizes",
+                                title: "Sizes",
+                                content: wildflowerBelt.getSizesString()
+                            },
+                            {
+                                id: "width",
+                                title: "Width",
+                                content: wildflowerBelt.getWidthString()
+                            },
+                            {
+                                id: "material",
+                                title: "Material",
+                                content: wildflowerBelt.getMaterialString()
+                            },
+                            {
+                                id: "buckle",
+                                title: "Buckle",
+                                content: "Not Included"
+                            },
+                            {
+                                id: "shipping",
+                                title: "Shipping",
+                                content: "Fast & Free"
+                            },
+                        ]} />),
                     },
                     {
                         id: "reviews",
