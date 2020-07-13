@@ -9,11 +9,16 @@ import ProductDetails from "~components/productDetails/productDetails";
 import Content from "~components/content/content";
 import Reviews from "~components/reviews/reviews";
 import DescriptionList from '../components/common/descriptionList/descriptionList';
+import ImageGallery from "~components/common/imageGallery/imageGallery"
 import Belt from "~classes/belt";
 import SEO from "~components/seo";
 
-
 const wildflowerBelt = new Belt(WildflowerbeltData);
+
+
+const productImages = [wildflowerBelt.getImage(), ...wildflowerBelt.getAssets('image', 'path')
+]
+
 
 const WildflowerBelt = () => (
     <Layout>
@@ -21,6 +26,7 @@ const WildflowerBelt = () => (
 
         <Section options={{ paddingLarge: true }}>
             <Container>
+                <ImageGallery images={productImages}></ImageGallery>
                 <ProductDetails></ProductDetails>
             </Container>
         </Section>

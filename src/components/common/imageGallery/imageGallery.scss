@@ -1,0 +1,22 @@
+@import '~scss/base/_base.scss';
+@import '~scss/helpers/_helpers.scss';
+
+.image-gallery {
+
+    &__primary-image {
+        
+    }
+
+    &__secondary-images {
+        display: flex;
+    }
+
+    &__secondary-image-wrapper {
+        width: 100%;
+    }
+
+    &__secondary-image {
+        // display: flex;
+    }
+
+}
