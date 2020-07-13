@@ -29,8 +29,8 @@ const WildflowerBelt = () => (
             <Container>
                 <GridContainer>
                     <Row>
-                        <Col><ImageGallery images={productImages}></ImageGallery></Col>
-                        <Col><WildflowerBeltProductDetails product={wildflowerBelt} /></Col>
+                        <Col md={12} lg={5}><ImageGallery images={productImages}></ImageGallery></Col>
+                        <Col md={12} lg={7}><WildflowerBeltProductDetails product={wildflowerBelt} /></Col>
                     </Row>
                 </GridContainer>
 
