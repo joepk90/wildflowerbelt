@@ -36,6 +36,37 @@ class Belt {
         return this._get('code');
     }
 
+    getAssets(type = null, value = null) {
+        const assets = this._get('assets');
+
+        // if no assets exist return null
+        if (Array.isArray(assets) === false || assets.length === 0) return null;
+
+        // if no type or value provided return all assets
+        if (type === null && value === null) return assets;
+
+        let selectedAssets = [];
+
+        assets.forEach((asset) => {
+
+            if (type === null) return;
+
+            if (asset.hasOwnProperty('type') && asset.type === type) {
+
+                if (value === null) {
+                    selectedAssets.push(asset);
+                } else if (asset.hasOwnProperty(value)) {
+                    selectedAssets.push(asset[value]);
+                }
+            }
+
+        });
+
+        return selectedAssets;
+
+    }
+
+
     getProductOptions() {
         const sizes = this._get('sizes');
 
