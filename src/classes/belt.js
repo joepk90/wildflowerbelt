@@ -16,6 +16,10 @@ class Belt {
 
     }
 
+    getImage() {
+        return this._get('image');
+    }
+
     getTitle() {
         return this._get('title');
     }
