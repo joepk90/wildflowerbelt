@@ -39,7 +39,7 @@ class Belt {
 
         let productOptions = [];
 
-        sizes.map((size, index) => {
+        sizes.foreach((size, index) => {
 
             const name = this._get('name', size);
             const code = this._get('code', size);
