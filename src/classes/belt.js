@@ -25,7 +25,7 @@ class Belt {
     }
 
     getDescription() {
-        return this._get('summary');
+        return this._get('description');
     }
 
     getPrice() {
