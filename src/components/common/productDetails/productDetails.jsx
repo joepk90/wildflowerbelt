@@ -2,70 +2,85 @@ import React, { Component } from 'react';
 
 import "~components/common/productDetails/ProductDetails.scss";
 
-// TODO make this a stateless functional component - how will I access the this.props.product?
-
 class ProductDetails extends Component {
+
+    handleQuantityChange = () => {
+        console.log('no handleQuantityChange override provided...');
+    }
+
+    handleOptionsChange = () => {
+        console.log('no handleOptionsChange override provided...');
+    }
+
+    handleBuyNowClick = () => {
+        console.log('no handleBuyNowClickEvent override provided...');
+    }
 
     theTitle = () => {
 
-        const title = this.props.product.getTitle();
+        const title = this.props.product.title;
 
         if (title === null) return;
 
+        // TODO use title component?
+
         return (
-            <h1 className="product__title">{title}</h1>
+            <h1 className="product-details__title">{title}</h1>
         );
 
     }
 
-    theDescription = () => {
+    theSummary = () => {
 
-        const description = this.props.product.getDescription();
+        const summary = this.props.product.summary;
 
-        if (description === null) return;
+        if (summary === null) return;
 
         return (
-            <p className="product__summary">{description}</p>
+            <p className="product-details__summary">{summary}</p>
         );
 
     }
 
     thePrice = () => {
 
-        const price = this.props.product.getPrice();
+        const price = this.props.product.price;
 
         if (price === null) return;
 
-        // TODO to make this a reusable component, the currency symbol should be customiseable
+        if (price.hasOwnProperty('amount') === false || price.hasOwnProperty('currency') === false) return;
+
         return (
-            <p className="product__price">£{price}</p>
+            <p className="product-details__price">{price.currency}{price.amount}</p>
         );
 
     }
 
-    theProductOptions = () => {
+    theProductOptions = (label = '') => {
 
-        const options = this.props.product.getProductOptions();
+        const options = this.props.product.options;
 
         if (options === null) return;
 
-        // TODO to make this a reusable component, the currency symbol should be customiseable
+        // TODO create/use select component?
+
         return (
 
-            <div className="product__options">
+            <div className="product-details__options">
 
-                <label for="">Size</label>
+                <label htmlFor="product-details-options">{label}
 
-                <select className="product__select-dropdown">
+                    <select id="product-details-options" className="product-details__select-dropdown" onChange={event => this.handleOptionsChange(event)} value={this.state.option}>
 
-                    <option>Choose an option</option>
-                    {options.map((option, index) => {
-                        return (
-                            <option value={option.value}>{option.name}</option>
-                        );
-                    })}
+                        <option value="">Choose an option</option>
+                        {options.map((option, index) => {
+                            return (
+                                <option key={index} value={option.value} className="product-details__select-option">{option.name}</option>
+                            );
+                        })}
 
-                </select>
+                    </select>
+                </label>
 
             </div>
 
@@ -75,12 +90,17 @@ class ProductDetails extends Component {
 
     theQuantity = () => {
 
+        // TODO create/use input component?
+
         return (
             <input
+                className="product-details__quantity-input"
                 type="number"
                 placeholder="1"
+                min="1"
                 name="quantity"
-                className="product__quantity-input"
+                value={this.state.quantity}
+                onChange={event => this.handleQuantityChange(event)}
             />
         );
 
@@ -88,40 +108,40 @@ class ProductDetails extends Component {
 
     theBuyButton = () => {
 
+        let buyButtonLabel = 'Buy Now';
+        if (this.props.buyButtonLabel) {
+            buyButtonLabel = this.props.BuyButtonLabel;
+        }
+
+        // TODO use button component?
+
         return (
             <button
-                className="product__buy-button"
-            >Buy Now</button>
+                className="product-details__buy-button"
+                onClick={() => this.handleBuyNowClick()}
+            >{buyButtonLabel}</button>
         );
 
     }
 
-    theProductCode = () => {
+    theProductCode = (label = '') => {
 
-        const code = this.props.product.getProductCode();
+        const code = this.props.product.code;
 
         if (code === null) return;
 
         // TODO to make this a reusable component, the product label (SKU) should be an option
         return (
-            <p className="product__code">SKU: {code}</p>
+            <p className="product-details__code">{label}{code}</p>
         );
 
     }
 
     render() {
+
         return (
             <div className="product-details">
-
-                {this.theTitle()}
-                {this.thePrice()}
-                {this.theDescription()}
-                {this.theProductOptions()}
-                {this.theQuantity()}
-                {this.theBuyButton()}
-                <hr />
-                {this.theProductCode()}
-
+                {this.props.children}
             </div>
         );
     }

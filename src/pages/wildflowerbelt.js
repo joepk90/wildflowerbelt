@@ -30,7 +30,16 @@ const WildflowerBelt = () => (
                 <GridContainer>
                     <Row>
                         <Col md={12} lg={5}><ImageGallery images={productImages}></ImageGallery></Col>
-                        <Col md={12} lg={7}><WildflowerBeltProductDetails product={wildflowerBelt} /></Col>
+                        <Col md={12} lg={7}>
+                            <WildflowerBeltProductDetails product={{
+                                title: wildflowerBelt.getTitle(),
+                                summary: wildflowerBelt.getSummary(),
+                                price: { amount: wildflowerBelt.getPrice(), currency: "£" },
+                                options: wildflowerBelt.getProductOptions(),
+                                code: wildflowerBelt.getProductCode(),
+                                buyButtonLabel: "Buy Now"
+                            }} />
+                        </Col>
                     </Row>
                 </GridContainer>
 

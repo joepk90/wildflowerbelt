@@ -24,8 +24,12 @@ class Belt {
         return this._get('title');
     }
 
-    getDescription() {
+    getSummary() {
         return this._get('summary');
+    }
+
+    getDescription() {
+        return this._get('description');
     }
 
     getPrice() {
