@@ -79,7 +79,7 @@ class Belt {
             const name = this._get('name', size);
             const code = this._get('code', size);
 
-            if (name === null || code === null) return;
+            if (name === null || code === null) return null;
 
             const rangeString = this.getSizeRangeString(size);
 
