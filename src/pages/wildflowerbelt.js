@@ -1,5 +1,6 @@
 import React from "react"
 
+import { LightgalleryProvider } from "react-lightgallery";
 import WildflowerbeltData from "~content/wildflowerbelt";
 import Layout from "~components/layout/layout";
 import { GridContainer, Row, Col } from '~components/common/grid/grid';
@@ -33,7 +34,9 @@ const WildflowerBelt = () => (
                 <GridContainer>
                     <Row>
                         <Col md={12} lg={5}>
-                            <ImageGallery images={productImages}></ImageGallery>
+                            <LightgalleryProvider lightgallerySettings={{ download: false, fullScreen: false, actualSize: false, zoom: false, thumbnail: true }}>
+                                <ImageGallery images={productImages} />
+                            </LightgalleryProvider>
                         </Col>
                         <Col md={12} lg={7}>
                             <ProductDetails></ProductDetails>

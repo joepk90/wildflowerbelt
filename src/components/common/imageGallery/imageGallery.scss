@@ -3,20 +3,33 @@
 
 .image-gallery {
 
-    &__primary-image {
-        
-    }
-
-    &__secondary-images {
+    &__thumbnails-wrapper {
         display: flex;
-    }
-
-    &__secondary-image-wrapper {
         width: 100%;
     }
 
-    &__secondary-image {
-        // display: flex;
+    &__thumbnail {
+        width: 100%;
+        margin: rem(5px);
+        cursor: pointer;
+    }
+
+    &__thumbnail-image {
+
+    }
+
+    &__primary-image {
+        cursor: pointer;
+        margin-bottom: rem(25px);
+    }
+
+    &__gallery-image {
+
+        &--primary {
+            width: 100%;
+            cursor: pointer;
+        }
+
     }
 
 }
