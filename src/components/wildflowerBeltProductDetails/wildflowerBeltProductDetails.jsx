@@ -2,7 +2,7 @@ import React from 'react';
 
 import ProductDetails from "~components/common/productDetails/productDetails";
 
-import "~components/WildflowerBeltProductDetails/WildflowerBeltProductDetails.scss";
+import "~components/wildflowerBeltProductDetails/wildflowerBeltProductDetails.scss";
 
 class WildflowerBelt extends ProductDetails {
 
