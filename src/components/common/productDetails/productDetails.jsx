@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import createReactClass from 'create-react-class';
 
 import "~components/common/productDetails/ProductDetails.scss";
 
-class ProductDetails extends Component {
+const ProductDetails = createReactClass({
 
-    handleQuantityChange = () => {
+    handleQuantityChange() {
         console.log('no handleQuantityChange override provided...');
-    }
+    },
 
-    handleOptionsChange = () => {
+    handleOptionsChange() {
         console.log('no handleOptionsChange override provided...');
-    }
+    },
 
-    handleBuyNowClick = () => {
+    handleBuyNowClick() {
         console.log('no handleBuyNowClickEvent override provided...');
-    }
+    },
 
-    theTitle = () => {
+    theTitle() {
 
         const title = this.props.product.title;
 
@@ -28,9 +29,9 @@ class ProductDetails extends Component {
             <h1 className="product-details__title">{title}</h1>
         );
 
-    }
+    },
 
-    theSummary = () => {
+    theSummary() {
 
         const summary = this.props.product.summary;
 
@@ -40,9 +41,9 @@ class ProductDetails extends Component {
             <p className="product-details__summary">{summary}</p>
         );
 
-    }
+    },
 
-    thePrice = () => {
+    thePrice() {
 
         const price = this.props.product.price;
 
@@ -54,9 +55,9 @@ class ProductDetails extends Component {
             <p className="product-details__price">{price.currency}{price.amount}</p>
         );
 
-    }
+    },
 
-    theProductOptions = (label = '') => {
+    theProductOptions(label = '') {
 
         const options = this.props.product.options;
 
@@ -86,9 +87,9 @@ class ProductDetails extends Component {
 
         );
 
-    }
+    },
 
-    theQuantity = () => {
+    theQuantity() {
 
         // TODO create/use input component?
 
@@ -104,9 +105,9 @@ class ProductDetails extends Component {
             />
         );
 
-    }
+    },
 
-    theBuyButton = () => {
+    theBuyButton() {
 
         let buyButtonLabel = 'Buy Now';
         if (this.props.buyButtonLabel) {
@@ -122,9 +123,9 @@ class ProductDetails extends Component {
             >{buyButtonLabel}</button>
         );
 
-    }
+    },
 
-    theProductCode = (label = '') => {
+    theProductCode(label = '') {
 
         const code = this.props.product.code;
 
@@ -135,7 +136,7 @@ class ProductDetails extends Component {
             <p className="product-details__code">{label}{code}</p>
         );
 
-    }
+    },
 
     render() {
 
@@ -145,6 +146,6 @@ class ProductDetails extends Component {
             </div>
         );
     }
-}
+});
 
 export default ProductDetails;
