@@ -28,7 +28,10 @@ class WildflowerBelt extends ProductDetails {
     }
 
     handleBuyNowClick = () => {
-        console.log('the buy button has been clicked');
+
+        const { state } = this;
+
+        console.log('the buy button has been clicked: ', state);
     }
 
     render() {
