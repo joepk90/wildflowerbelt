@@ -8,7 +8,7 @@ class WildflowerBelt extends ProductDetails {
 
     state = {
         quantity: 1,
-        option: ''
+        selectedOption: null
     }
 
     handleQuantityChange = (event) => {
@@ -19,11 +19,11 @@ class WildflowerBelt extends ProductDetails {
 
     }
 
-    handleOptionsChange = (event) => {
+    handleOptionsChange = newOption => {
 
-        if (!event.currentTarget.value) return;
+        if (!newOption.value) return;
 
-        this.setState({ option: event.currentTarget.value });
+        this.setState({ option: newOption.value });
 
     }
 

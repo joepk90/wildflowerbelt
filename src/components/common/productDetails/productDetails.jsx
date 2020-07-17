@@ -1,5 +1,6 @@
 import React from 'react';
 import createReactClass from 'create-react-class';
+import Select from 'react-select';
 
 import "~components/common/productDetails/ProductDetails.scss";
 
@@ -59,30 +60,23 @@ const ProductDetails = createReactClass({
 
     theProductOptions(label = '') {
 
-        const options = this.props.product.options;
+        const { options } = this.props.product;
+        const { selectedOption } = this.state;
 
         if (options === null) return;
-
-        // TODO create/use select component?
 
         return (
 
             <div className="product-details__options">
 
-                <label htmlFor="product-details-options">{label}
+                <span>{label}</span>
 
-                    <select id="product-details-options" className="product-details__select-dropdown" onChange={event => this.handleOptionsChange(event)} value={this.state.option}>
-
-                        <option value="">Choose an option</option>
-                        {options.map((option, index) => {
-                            return (
-                                <option key={index} value={option.value} className="product-details__select-option">{option.name}</option>
-                            );
-                        })}
-
-                    </select>
-                </label>
-
+                <Select
+                    value={selectedOption}
+                    onChange={this.handleOptionsChange}
+                    options={options}
+                    className="product-details__select"
+                />
             </div>
 
         );
