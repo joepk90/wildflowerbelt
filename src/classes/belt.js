@@ -24,6 +24,10 @@ class Belt {
         return this._get('title');
     }
 
+    getSummary() {
+        return this._get('summary');
+    }
+
     getDescription() {
         return this._get('description');
     }
@@ -74,7 +78,7 @@ class Belt {
 
         let productOptions = [];
 
-        sizes.foreach((size, index) => {
+        productOptions = sizes.map((size, index) => {
 
             const name = this._get('name', size);
             const code = this._get('code', size);
@@ -88,7 +92,7 @@ class Belt {
                 nameString = name + ` (${rangeString})`;
             }
 
-            productOptions.push({ name: nameString, value: code });
+            return { name: nameString, value: code };
         })
 
         return productOptions;

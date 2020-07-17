@@ -7,11 +7,11 @@ import { GridContainer, Row, Col } from '~components/common/grid/grid';
 import Container from "~components/container/container";
 import Section from "~components/section/section";
 import ResponsiveTabs from "~components/common/responsiveTabs/responsiveTabs";
-import ProductDetails from "~components/productDetails/productDetails";
 import Content from "~components/content/content";
 import Reviews from "~components/reviews/reviews";
-import DescriptionList from '../components/common/descriptionList/descriptionList';
 import ImageGallery from "~components/common/imageGallery/imageGallery"
+import DescriptionList from '~components/common/descriptionList/descriptionList';
+import WildflowerBeltProductDetails from '~components/wildflowerBeltProductDetails/wildflowerBeltProductDetails';
 import Belt from "~classes/belt";
 import SEO from "~components/seo";
 
@@ -39,7 +39,14 @@ const WildflowerBelt = () => (
                             </LightgalleryProvider>
                         </Col>
                         <Col md={12} lg={7}>
-                            <ProductDetails></ProductDetails>
+                            <WildflowerBeltProductDetails product={{
+                                title: wildflowerBelt.getTitle(),
+                                summary: wildflowerBelt.getSummary(),
+                                price: { amount: wildflowerBelt.getPrice(), currency: "£" },
+                                options: wildflowerBelt.getProductOptions(),
+                                code: wildflowerBelt.getProductCode(),
+                                buyButtonLabel: "Buy Now"
+                            }} />
                         </Col>
                     </Row>
                 </GridContainer>
