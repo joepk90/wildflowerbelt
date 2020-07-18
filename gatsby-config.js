@@ -13,14 +13,14 @@ module.exports = {
         name: 'The Wildflower Belt',
         link: pageLinks.wildflowerbelt,
       },
-      {
-        name: 'Contact',
-        link: pageLinks.contact,
-      },
-      {
-        name: 'About',
-        link: pageLinks.about,
-      },
+      // {
+      //   name: 'Contact',
+      //   link: pageLinks.contact,
+      // },
+      // {
+      //   name: 'About',
+      //   link: pageLinks.about,
+      // },
     ],
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
