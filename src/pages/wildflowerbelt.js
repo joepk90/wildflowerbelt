@@ -1,5 +1,7 @@
 import React from "react"
 
+import "~scss/pages/wildflowerbelt.scss"
+
 import { LightgalleryProvider } from "react-lightgallery";
 import WildflowerbeltData from "~content/wildflowerbelt";
 import Layout from "~components/layout/layout";
@@ -18,16 +20,12 @@ import SEO from "~components/seo";
 // TODO should the belt class be removed and all data logic handled in the wildflowerBelt component?
 // maybe the belt class should be called product? and should just handle generic product logic...
 const wildflowerBelt = new Belt(WildflowerbeltData);
-
-
 const productImages = [wildflowerBelt.getImage(), ...wildflowerBelt.getAssets('image', 'path')]
-
-
 
 const WildflowerBelt = () => (
     <Layout>
 
-        <SEO title="Wildflower Belt" />
+        <SEO title="Wildflower Belt" className="wildflowerbelt" />
 
         <Section options={{ paddingLarge: true }}>
             <Container>

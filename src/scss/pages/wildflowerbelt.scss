@@ -1,0 +1,15 @@
+@import '~scss/base/_base.scss';
+@import '~scss/helpers/_helpers.scss';
+
+// TODO if more products are created, this stylesheet and class structure should be product-details
+.wildflowerbelt {
+
+    .responsive-tabs {
+        &__panel {
+            @include breakpoint($breakpoint-handset-landscape) {
+                padding-right: 10%;
+            }
+        }
+    }
+
+}
