@@ -6,4 +6,5 @@
     border: 0;
     cursor: pointer;
     @include LinkButtonModifiers();
+    @extend %disabledStyles;
 }
