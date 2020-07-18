@@ -1,5 +1,7 @@
 import React from "react"
 
+import ProductDetails from "~components/common/productDetails/productDetails";
+
 import { LightgalleryProvider } from "react-lightgallery";
 import WildflowerbeltData from "~content/wildflowerbelt";
 import Layout from "~components/layout/layout";
@@ -11,7 +13,7 @@ import Content from "~components/content/content";
 import Reviews from "~components/reviews/reviews";
 import ImageGallery from "~components/common/imageGallery/imageGallery"
 import DescriptionList from '~components/common/descriptionList/descriptionList';
-import WildflowerBeltProductDetails from '~components/wildflowerBeltProductDetails/wildflowerBeltProductDetails';
+import WildflowerBeltProductOptions from '~components/wildflowerBeltProductDetails/wildflowerBeltProductDetails';
 import Belt from "~classes/belt";
 import SEO from "~components/seo";
 
@@ -23,6 +25,10 @@ const wildflowerBelt = new Belt(WildflowerbeltData);
 const productImages = [wildflowerBelt.getImage(), ...wildflowerBelt.getAssets('image', 'path')]
 
 
+
+
+const wildflowerBeltClass = new ProductDetails(wildflowerBelt);
+console.log(wildflowerBeltClass);
 
 const WildflowerBelt = () => (
     <Layout>
@@ -39,12 +45,14 @@ const WildflowerBelt = () => (
                             </LightgalleryProvider>
                         </Col>
                         <Col md={12} lg={7}>
-                            <WildflowerBeltProductDetails product={{
-                                title: wildflowerBelt.getTitle(),
-                                summary: wildflowerBelt.getSummary(),
-                                price: { amount: wildflowerBelt.getPrice(), currency: "£" },
+                            {wildflowerBeltClass.theTitle()}
+                            {wildflowerBeltClass.thePrice()}
+                            {wildflowerBeltClass.theSummary()}
+                            {wildflowerBeltClass.theProductCode('SKU: ')}
+
+
+                            <WildflowerBeltProductOptions product={{
                                 options: wildflowerBelt.getProductOptions(),
-                                code: wildflowerBelt.getProductCode(),
                                 buyButtonLabel: "Buy Now"
                             }} />
                         </Col>
