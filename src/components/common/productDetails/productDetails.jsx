@@ -1,22 +1,23 @@
-import React from 'react';
-import createReactClass from 'create-react-class';
+import React, { Component } from 'react';
+
 import Select from 'react-select';
 
 import "~components/common/productDetails/ProductDetails.scss";
 
-const ProductDetails = createReactClass({
+
+class ProductDetails extends Component {
 
     handleQuantityChange() {
         console.log('no handleQuantityChange override provided...');
-    },
+    }
 
     handleOptionsChange() {
         console.log('no handleOptionsChange override provided...');
-    },
+    }
 
     handleBuyNowClick() {
         console.log('no handleBuyNowClickEvent override provided...');
-    },
+    }
 
     theTitle() {
 
@@ -30,7 +31,7 @@ const ProductDetails = createReactClass({
             <h1 className="product-details__title">{title}</h1>
         );
 
-    },
+    }
 
     theSummary() {
 
@@ -42,7 +43,7 @@ const ProductDetails = createReactClass({
             <p className="product-details__summary">{summary}</p>
         );
 
-    },
+    }
 
     thePrice() {
 
@@ -56,7 +57,7 @@ const ProductDetails = createReactClass({
             <p className="product-details__price">{price.currency}{price.amount}</p>
         );
 
-    },
+    }
 
     theProductOptions(label = '') {
 
@@ -81,7 +82,7 @@ const ProductDetails = createReactClass({
 
         );
 
-    },
+    }
 
     theQuantity() {
 
@@ -99,7 +100,7 @@ const ProductDetails = createReactClass({
             />
         );
 
-    },
+    }
 
     theBuyButton() {
 
@@ -117,7 +118,7 @@ const ProductDetails = createReactClass({
             >{buyButtonLabel}</button>
         );
 
-    },
+    }
 
     theProductCode(label = '') {
 
@@ -130,7 +131,7 @@ const ProductDetails = createReactClass({
             <p className="product-details__code">{label}{code}</p>
         );
 
-    },
+    }
 
     render() {
 
@@ -140,6 +141,6 @@ const ProductDetails = createReactClass({
             </div>
         );
     }
-});
+}
 
 export default ProductDetails;
