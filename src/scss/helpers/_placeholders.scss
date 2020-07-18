@@ -7,3 +7,12 @@
 %default-animation {
     transition: all $animation-time ease-in-out;
 }
+
+%disabledStyles {
+    &:disabled {
+        background-color: $background-grey;
+        &:hover {
+            background-color: $background-grey;
+        }
+    }
+}
