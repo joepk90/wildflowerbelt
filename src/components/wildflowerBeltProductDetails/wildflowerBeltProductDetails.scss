@@ -16,6 +16,7 @@
     }
 
     &__price {
+        font-family: $heading-font;
         border-top: 1px solid $border-subtle-white;
         border-bottom: 1px solid $border-subtle-white;
         font-size: $h3-font-size;
