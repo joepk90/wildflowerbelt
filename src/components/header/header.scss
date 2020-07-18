@@ -4,14 +4,12 @@
 .site-header {
 
     &__container {
-        @extend %container;
         display: flex;
         flex-direction: column;
-        width: 100%;
-        padding: 0;
 
         @include breakpoint($breakpoint-navigation) {
             flex-direction: row;
+            padding: 0 rem(15px);
         }
 
     }
@@ -24,9 +22,9 @@
 
         // TODO this looks way to specific. this is used to control the logo no that a container/section isn't used.
         // TODO would be good to get rid of the below code and find less custom way of dealing with this.
-        padding: 0 0 rem(10px) rem(15px);
-        @include breakpoint($breakpoint-desktop) {
-            padding: 0 0 rem(10px) 0;
+        padding: 0 0 rem(15px) rem(15px);
+        @include breakpoint($breakpoint-navigation) {
+            padding: 0;
         }
     }
 

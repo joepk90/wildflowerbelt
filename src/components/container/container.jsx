@@ -12,7 +12,7 @@ const classModifiers = function (options) {
     classList.push('container--full-width');
   }
 
-  if (options.wrap && options.wrap === true) {
+  if (options.noWrap && options.noWrap === true) {
     classList.push('container--no-wrap');
   }
 
