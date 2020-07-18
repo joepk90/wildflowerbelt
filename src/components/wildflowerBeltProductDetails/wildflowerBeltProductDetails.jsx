@@ -19,11 +19,13 @@ class WildflowerBelt extends ProductDetails {
 
     }
 
-    handleOptionsChange = newOption => {
+    handleOptionsChange = selectedOption => {
 
-        if (!newOption.value) return;
+        if (!selectedOption.value || !selectedOption.label) {
+            return;
+        }
 
-        this.setState({ option: newOption.value });
+        this.setState({ selectedOption });
 
     }
 
