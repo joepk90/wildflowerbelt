@@ -120,6 +120,7 @@ class ProductDetails extends Component {
             <Button
                 modifiers={{ promo: true }}
                 onClick={() => this.handleBuyNowClick()}
+                disabled="disabled"
             >{buyButtonLabel}</Button>
         );
 
