@@ -1,13 +1,13 @@
 class Belt {
 
     constructor(beltData) {
-        this.belt = beltData;
+        this.product = beltData;
     }
 
     _get(property, parent = null) {
 
         if (parent == null) {
-            parent = this.belt;
+            parent = this.product;
         }
 
         if (property in parent === false || parent[property].length === 0) return null;
