@@ -4,7 +4,7 @@ import Select from 'react-select';
 import Button from '~components/common/button/button'
 import Input from '~components/common/input/input'
 
-import "~components/common/productDetails/ProductDetails.scss";
+import "~components/common/productDetails/productDetails.scss";
 
 
 class ProductDetails extends Component {
