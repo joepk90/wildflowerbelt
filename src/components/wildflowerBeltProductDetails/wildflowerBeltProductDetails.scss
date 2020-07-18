@@ -7,11 +7,63 @@
 
 
     &__title {
-        // font-size: $h2-font-size;
+        // font-size: $h2-font-si   ze;
+    }
+
+    &__summary {
+        font-size: $h6-font-size;
+        margin: rem(10px) 0;
     }
 
     &__price {
+        border-top: 1px solid $border-subtle-white;
+        border-bottom: 1px solid $border-subtle-white;
+        font-size: $h3-font-size;
+        padding: rem(5px) 0;
+    }
+
+    &__options {
+        display: flex;
+        align-items: center;
         margin: rem(20px) 0;
-        border: 1px solid grey;
+    }
+
+    &__select-label {
+        text-transform: uppercase;
+        font-weight: $font-weight-bold;
+        padding-right: rem(10px);
+    }
+
+    &__select {
+        flex-grow: 1;
+        // width: 50%;
+        max-width: 300px;
+    }
+
+    &__code {
+        font-size: $font-size-small;
+    }
+
+    &__quantity-input {
+        margin-right: rem(20px);
+        display: inline-block;
+    }
+
+    // TODO extend react-select. move to extended react-select component directory
+    .react-select {
+        &__control {
+            border-radius: 0;
+        }
+
+        &__single-value {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        &__option {
+            font-size: 10px;
+            text-transform: uppercase;
+            padding: 0 rem(10px);
+        }
     }
 }

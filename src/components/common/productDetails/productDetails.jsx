@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Select from 'react-select';
+import Button from '~components/common/button/button'
+import Input from '~components/common/input/input'
 
 import "~components/common/productDetails/ProductDetails.scss";
 
@@ -70,13 +72,14 @@ class ProductDetails extends Component {
 
             <div className="product-details__options">
 
-                <span>{label}</span>
+                <span className="product-details__select-label">{label}</span>
 
                 <Select
                     value={selectedOption}
                     onChange={this.handleOptionsChange}
                     options={options}
-                    className="product-details__select"
+                    className="product-details__select react-select"
+                    classNamePrefix="react-select"
                 />
             </div>
 
@@ -89,15 +92,17 @@ class ProductDetails extends Component {
         // TODO create/use input component?
 
         return (
-            <input
-                className="product-details__quantity-input"
-                type="number"
-                placeholder="1"
-                min="1"
-                name="quantity"
-                value={this.state.quantity}
-                onChange={event => this.handleQuantityChange(event)}
-            />
+            <div className="product-details__quantity-input">
+                <Input
+                    className="input"
+                    type="number"
+                    placeholder="1"
+                    min="1"
+                    name="quantity"
+                    value={this.state.quantity}
+                    onChange={event => this.handleQuantityChange(event)}
+                />
+            </div>
         );
 
     }
@@ -112,10 +117,10 @@ class ProductDetails extends Component {
         // TODO use button component?
 
         return (
-            <button
-                className="product-details__buy-button"
+            <Button
+                modifiers={{ promo: true }}
                 onClick={() => this.handleBuyNowClick()}
-            >{buyButtonLabel}</button>
+            >{buyButtonLabel}</Button>
         );
 
     }
