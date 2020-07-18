@@ -80,19 +80,19 @@ class Belt {
 
         productOptions = sizes.map((size, index) => {
 
-            const name = this._get('name', size);
+            const label = this._get('name', size);
             const code = this._get('code', size);
 
-            if (name === null || code === null) return null;
+            if (label === null || code === null) return null;
 
             const rangeString = this.getSizeRangeString(size);
 
-            let nameString = name;
+            let labelString = label;
             if (rangeString !== null) {
-                nameString = name + ` (${rangeString})`;
+                labelString = label + ` (${rangeString})`;
             }
 
-            return { name: nameString, value: code };
+            return { label: labelString, value: code };
         })
 
         return productOptions;

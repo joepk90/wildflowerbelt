@@ -1,21 +1,23 @@
-import React from 'react';
-import createReactClass from 'create-react-class';
+import React, { Component } from 'react';
+
+import Select from 'react-select';
 
 import "~components/common/productDetails/ProductDetails.scss";
 
-const ProductDetails = createReactClass({
+
+class ProductDetails extends Component {
 
     handleQuantityChange() {
         console.log('no handleQuantityChange override provided...');
-    },
+    }
 
     handleOptionsChange() {
         console.log('no handleOptionsChange override provided...');
-    },
+    }
 
     handleBuyNowClick() {
         console.log('no handleBuyNowClickEvent override provided...');
-    },
+    }
 
     theTitle() {
 
@@ -29,7 +31,7 @@ const ProductDetails = createReactClass({
             <h1 className="product-details__title">{title}</h1>
         );
 
-    },
+    }
 
     theSummary() {
 
@@ -41,7 +43,7 @@ const ProductDetails = createReactClass({
             <p className="product-details__summary">{summary}</p>
         );
 
-    },
+    }
 
     thePrice() {
 
@@ -55,39 +57,32 @@ const ProductDetails = createReactClass({
             <p className="product-details__price">{price.currency}{price.amount}</p>
         );
 
-    },
+    }
 
     theProductOptions(label = '') {
 
-        const options = this.props.product.options;
+        const { options } = this.props.product;
+        const { selectedOption } = this.state;
 
         if (options === null) return;
-
-        // TODO create/use select component?
 
         return (
 
             <div className="product-details__options">
 
-                <label htmlFor="product-details-options">{label}
+                <span>{label}</span>
 
-                    <select id="product-details-options" className="product-details__select-dropdown" onChange={event => this.handleOptionsChange(event)} value={this.state.option}>
-
-                        <option value="">Choose an option</option>
-                        {options.map((option, index) => {
-                            return (
-                                <option key={index} value={option.value} className="product-details__select-option">{option.name}</option>
-                            );
-                        })}
-
-                    </select>
-                </label>
-
+                <Select
+                    value={selectedOption}
+                    onChange={this.handleOptionsChange}
+                    options={options}
+                    className="product-details__select"
+                />
             </div>
 
         );
 
-    },
+    }
 
     theQuantity() {
 
@@ -105,7 +100,7 @@ const ProductDetails = createReactClass({
             />
         );
 
-    },
+    }
 
     theBuyButton() {
 
@@ -123,7 +118,7 @@ const ProductDetails = createReactClass({
             >{buyButtonLabel}</button>
         );
 
-    },
+    }
 
     theProductCode(label = '') {
 
@@ -136,7 +131,7 @@ const ProductDetails = createReactClass({
             <p className="product-details__code">{label}{code}</p>
         );
 
-    },
+    }
 
     render() {
 
@@ -146,6 +141,6 @@ const ProductDetails = createReactClass({
             </div>
         );
     }
-});
+}
 
 export default ProductDetails;
