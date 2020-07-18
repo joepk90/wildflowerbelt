@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from "gatsby"
 
-import '~components/common/link/link.scss';
+import '~components/common/button/button.scss';
 
 // TODO this function should be made global. both Link and Button use it
 const renderClassList = function (options) {
@@ -10,16 +9,18 @@ const renderClassList = function (options) {
 
     if (!options) return '';
 
+    /** PADDING OPTIONS */
+
     if (options.rounded && options.rounded === true) {
-        classList.push('link--rounded');
+        classList.push('button--rounded');
     }
 
     if (options.large && options.large === true) {
-        classList.push('link--large');
+        classList.push('button--large');
     }
 
     if (options.promo && options.promo === true) {
-        classList.push('link--promo');
+        classList.push('button--promo');
     }
 
     if (classList.length === 0) {
@@ -30,16 +31,16 @@ const renderClassList = function (options) {
 
 }
 
-const CustomLink = ({ children, modifiers, className, ...linkAttributes }) => {
+const Button = ({ children, modifiers, className, ...buttonAttributes }) => {
 
     className = className ? ' ' + className : '';
 
     return (
-        <Link
-            className={'link' + renderClassList(modifiers) + className}
-            {...linkAttributes}
-        >{children}</Link>
+        <button
+            className={'button' + renderClassList(modifiers) + className}
+            {...buttonAttributes}
+        >{children}</button>
     );
 }
 
-export default CustomLink;
+export default Button;
