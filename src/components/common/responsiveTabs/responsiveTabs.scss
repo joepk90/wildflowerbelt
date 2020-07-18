@@ -50,5 +50,9 @@
         &.is-active {
             display: block;
         }
+
+        @include breakpoint($breakpoint-handset-landscape) {
+            margin: 0 rem(15px);
+        }
     }
 }
