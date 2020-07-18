@@ -10,6 +10,7 @@
 
 %disabledStyles {
     &:disabled {
+        cursor: default;
         background-color: $background-grey;
         &:hover {
             background-color: $background-grey;
