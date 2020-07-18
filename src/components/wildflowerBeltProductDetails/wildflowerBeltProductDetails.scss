@@ -21,6 +21,16 @@
 
     &__options {
         display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-bottom: rem(20px);
+        margin-bottom: rem(20px);
+        border-bottom: 1px solid $border-subtle-white;
+    }
+
+    &__select-option {
+        width: 100%;;
+        display: flex;
         align-items: center;
         margin: rem(20px) 0;
     }
@@ -43,7 +53,9 @@
 
     &__quantity-input {
         margin-right: rem(20px);
-        display: inline-block;
+        .input {
+            height: 100%;
+        }
     }
 
     // TODO extend react-select. move to extended react-select component directory

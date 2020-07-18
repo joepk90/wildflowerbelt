@@ -44,9 +44,11 @@ class WildflowerBelt extends ProductDetails {
                 {this.theTitle()}
                 {this.thePrice()}
                 {this.theSummary()}
-                {this.theProductOptions('Size: ')}
-                {this.theQuantity()}
-                {this.theBuyButton()}
+                <div className="product-details__options">
+                    {this.theProductOptions('Size: ')}
+                    {this.theQuantity()}
+                    {this.theBuyButton()}
+                </div>
                 {this.theProductCode('SKU: ')}
             </ProductDetails>
 

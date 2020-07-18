@@ -70,7 +70,7 @@ class ProductDetails extends Component {
 
         return (
 
-            <div className="product-details__options">
+            <div className="product-details__select-option">
 
                 <span className="product-details__select-label">{label}</span>
 
