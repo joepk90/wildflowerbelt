@@ -34,7 +34,7 @@ const IndexPage = () => (
             </Col>
 
             <Col md={12} lg={5}>
-              <PromoCard title="Worn with Confidence" linkAttributes={{ url: pageLinks.wildflowerbelt, title: 'Shop Now' }} />
+              <PromoCard title="Worn with Confidence" linkAttributes={{ to: pageLinks.wildflowerbelt, title: 'Shop Now', modifiers: { promo: true, rounded: true, large: true } }} />
             </Col>
 
           </Row>

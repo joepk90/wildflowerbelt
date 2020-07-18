@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PromoButton from '~components/promo-button/promo-button';
+import Link from '~components/common/link/link';
 
 import "~components/promo-card/promo-card.scss";
 
@@ -24,7 +24,7 @@ const PromoCard = ({ title, linkAttributes }) => {
 
                 <p className="promo-card__title">{title}</p>
 
-                <PromoButton linkAttributes={linkAttributes}>Shop Now</PromoButton>
+                <Link {...linkAttributes}>Shop Now</Link>
 
             </div>
 

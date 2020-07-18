@@ -1,3 +1,30 @@
 @function rem($px, $base-font-size: $base-font-size) {
     @return ($px / $base-font-size) * 1rem;
 }
+
+@mixin LinkButtonModifiers {
+
+    &--promo {
+        @extend %default-animation;
+        padding: rem(10px) rem(15px);
+        background-color: $background-secondary;
+        color: $white;
+        display: inline-block;
+        border-radius: 0;
+        text-transform: uppercase;
+        font-size: $h4-font-size;
+        &:hover {
+            background-color: saturate($background-secondary, 20%);
+            color: $white;
+        }
+    }
+
+    &--rounded {
+        border-radius: rem(10px);
+    }
+
+    &--large {
+        padding: rem(20px) rem(20px);
+        font-size: $h2-font-size;
+    }
+}
