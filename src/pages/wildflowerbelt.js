@@ -10,7 +10,7 @@ import Container from "~components/container/container";
 import Section from "~components/section/section";
 import ResponsiveTabs from "~components/common/responsiveTabs/responsiveTabs";
 import Content from "~components/content/content";
-import Reviews from "~components/reviews/reviews";
+import Review from "~components/common/review/review";
 import ImageGallery from "~components/common/imageGallery/imageGallery"
 import DescriptionList from '~components/common/descriptionList/descriptionList';
 import WildflowerBeltProductDetails from '~components/wildflowerBeltProductDetails/wildflowerBeltProductDetails';
@@ -94,7 +94,9 @@ const WildflowerBelt = () => (
                     {
                         id: "reviews",
                         title: "Reviews",
-                        content: (<Reviews reviewsData={WildflowerbeltData.reviews}></Reviews>)
+                        content: (wildflowerBelt.getReviews().map(((review, index) => {
+                            return <Review modifiers={{ box: true }} {...review} key={index} />
+                        })))
                     },
                 ]}></ResponsiveTabs>
             </Container>

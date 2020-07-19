@@ -40,6 +40,31 @@ class Belt {
         return this._get('code');
     }
 
+    getReviews(properties = null) {
+
+        let reviews = this._get('reviews');
+
+        if (properties === null) {
+            return reviews;
+        }
+
+        // return specific propeties of the review arrays
+        const filteredReviews = reviews.map(review => {
+
+            let filteredReview = {};
+
+            properties.forEach(property => {
+                if (property in review) {
+                    filteredReview[property] = review[property];
+                }
+            })
+
+            return filteredReview;
+        });
+
+        return filteredReviews;
+    }
+
     getAssets(type = null, value = null) {
         const assets = this._get('assets');
 
