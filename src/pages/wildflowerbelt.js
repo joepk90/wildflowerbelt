@@ -20,7 +20,7 @@ import SEO from "~components/seo";
 // TODO should the belt class be removed and all data logic handled in the wildflowerBelt component?
 // maybe the belt class should be called product? and should just handle generic product logic...
 const wildflowerBelt = new Belt(WildflowerbeltData);
-const productImages = [wildflowerBelt.getImage(), ...wildflowerBelt.getAssets('image', 'path')]
+const productImages = [wildflowerBelt.getImage(), ...wildflowerBelt.getAssets('image', 'path')];
 
 const WildflowerBelt = () => (
     <Layout>
