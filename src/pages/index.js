@@ -1,21 +1,23 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import "~scss/pages/index.scss"
+
 import { pageLinks } from "~utilities/utilities.js"
 import indexData from "~content/index.json"
-import ReviewData from "~content/reviews.json"
 import Layout from "~components/layout/layout";
 import Image from "~components/image/image";
 import Title from "~components/title/title";
 import Container from "~components/container/container";
 import Section from "~components/section/section";
 import Content from "~components/content/content";
-import Reviews from "~components/reviews/reviews";
 import PromoCard from '~components/promo-card/promo-card';
 import SEO from "~components/seo";
 import { GridContainer, Row, Col } from '~components/common/grid/grid';
-
-import "~scss/pages/index.scss"
+import ReviewPromotion from "~components/reviewPromotion/reviewPromotion";
+import WildflowerbeltData from "~content/wildflowerbelt";
+import Belt from "~classes/belt";
+const wildflowerBelt = new Belt(WildflowerbeltData);
 
 const IndexPage = () => (
   <Layout>
@@ -81,7 +83,12 @@ const IndexPage = () => (
 
     <Section options={{ paddingLarge: true }}>
       <Container>
-        <Reviews reviewsData={ReviewData.reviews}></Reviews>
+        <Title options={{ align: 'center' }}>Reviews</Title>
+
+        {wildflowerBelt.getReviews(['user', 'rating', 'comment']).map(((review, index) => {
+          return <ReviewPromotion {...review} key={index} />
+        }))}
+
       </Container>
     </Section>
 

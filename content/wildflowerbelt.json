@@ -107,19 +107,22 @@
     ],
     "reviews": [
         {
-            "review": "I would see peoples eyes double take and they would say “That is a really nice belt…",
+            "comment": "I would see peoples eyes double take and they would say “That is a really nice belt…",
             "user": "James",
-            "rating": "5"
+            "rating": 5,
+            "date": "1595105032"
         },
         {
-            "review": "…the Wildflower Belt quickly became my favourite accessory.",
+            "comment": "…the Wildflower Belt quickly became my favourite accessory.",
             "user": "Chris",
-            "rating": "5"
+            "rating": 3,
+            "date": "1595105032"
         },
         {
-            "review": "I loved the Wildflower Belts western flavour, embossed pattern and deep brown colour.",
+            "comment": "I loved the Wildflower Belts western flavour, embossed pattern and deep brown colour.",
             "user": "Sue",
-            "rating": "5"
+            "rating": 4,
+            "date": "1595105032"
         }
     ]
 }
