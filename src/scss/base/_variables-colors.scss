@@ -75,3 +75,10 @@ $dark-link-color: $text-grey;
 $dark-link-hover: $text-dark-grey;
 
 
+/*
+    Exported Variables are available in JS
+*/
+:export {
+    colorPrimary: $color-primary;
+    secondaryPrimary: $color-secondary;
+}
