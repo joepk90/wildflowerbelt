@@ -55,14 +55,17 @@ class PaypalButton extends React.Component {
         actions.payment.execute()
             .then(() => {
 
-                // TODO check data
-                let payment = {};
-                payment.paid = true;
-                payment.cancelled = false;
-                payment.payerID = data.payerID;
-                payment.paymentID = data.paymentID;
-                payment.paymentToken = data.paymentToken;
-                payment.returnUrl = data.returnUrl;
+                const { payerID, paymentID, paymentToken, returnUrl } = data || {};
+
+                const payment = {
+                    paid: true,
+                    cancelled: false,
+                    payerID: payerID,
+                    paymentID: paymentID,
+                    paymentToken: paymentToken,
+                    returnUrl: returnUrl
+                };
+
                 this.props.onSuccess(payment);
 
             });
