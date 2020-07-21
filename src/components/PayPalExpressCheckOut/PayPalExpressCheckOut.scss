@@ -7,13 +7,12 @@
 
 .button {
     
-    padding: 0! important;
-    max-width: 150px;
-    overflow: hidden;
-
     /* TEMP BUY NOW BUTTON SCSS - THIS NEEDS TO GO */
 
     &--buy-now {
+        padding: 0! important;
+        max-width: 150px;
+        overflow: hidden;
         position: relative;
 
         &.disabled {
