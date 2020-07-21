@@ -30,38 +30,42 @@ class PaypalButton extends React.Component {
 
         const { isScriptLoaded, isScriptLoadSucceed } = this.props;
 
-        if (isScriptLoaded && isScriptLoadSucceed) {
-            this.setState({ showButton: true });
-        } else {
+        if (isScriptLoaded === false || isScriptLoadSucceed === false) {
             console.log('Cannot load Paypal script!');
             this.props.onError();
+            return;
         }
+
+        this.setState({ showButton: true });
 
     }
 
     handlePayment = () => {
 
+        // TODO create this.createTransaction method
         return window.paypal.rest.payment.create(this.props.env, this.props.client, {
             transactions: [
                 { amount: { total: this.props.total, currency: this.props.currency } },
             ],
         })
-
     }
 
-    onAuthorize = (data, actions) => {
+    onAuthorize = async (data, actions) => {
 
-        // TODO await
-        actions.payment.execute().then(() => {
-            const payment = Object.assign({}, this.props.payment);
-            payment.paid = true;
-            payment.cancelled = false;
-            payment.payerID = data.payerID;
-            payment.paymentID = data.paymentID;
-            payment.paymentToken = data.paymentToken;
-            payment.returnUrl = data.returnUrl;
-            this.props.onSuccess(payment);
-        });
+        actions.payment.execute()
+            .then(() => {
+
+                // TODO check data
+                let payment = {};
+                payment.paid = true;
+                payment.cancelled = false;
+                payment.payerID = data.payerID;
+                payment.paymentID = data.paymentID;
+                payment.paymentToken = data.paymentToken;
+                payment.returnUrl = data.returnUrl;
+                this.props.onSuccess(payment);
+
+            });
     }
 
     render() {
