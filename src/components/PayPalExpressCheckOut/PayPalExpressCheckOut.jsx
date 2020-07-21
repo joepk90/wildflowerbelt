@@ -15,38 +15,29 @@ import "~components/PayPalExpressCheckOut/PayPalExpressCheckOut.scss";
 class PaypalButton extends React.Component {
     constructor(props) {
         super(props);
+
         window.React = React;
         window.ReactDOM = ReactDOM;
+
         this.state = {
             showButton: false,
-            env: 'sandbox', // Or 'sandbox'
-            client: {
-                sandbox: 'AWuPIyjaRlq05oHy8jhOarB8G9EA6qaKl9GcAgghdlfCv5tSTETI5egdezt1i2BEbS1_ysn9c1q8COWY',
-                production: 'AbrY9hgE7avHLSxU1V_5L_0Epe50vH-p-_nkO4zx3FY_KT7R-sjfKpZ2ZB7VvQ8ZyALC9cCGsSTA02ZQ',
-            },
-            commit: true, // Show a 'Pay Now' button
         };
     }
-    componentDidMount() {
+
+    componentDidUpdate(prevProps) {
+
+        if (prevProps === this.props) return;
+
         const { isScriptLoaded, isScriptLoadSucceed } = this.props;
+
         if (isScriptLoaded && isScriptLoadSucceed) {
             this.setState({ showButton: true });
+        } else {
+            console.log('Cannot load Paypal script!');
+            this.props.onError();
         }
-    }
 
-    componentWillReceiveProps({ isScriptLoaded, isScriptLoadSucceed }) {
-        if (!this.state.show) {
-            if (isScriptLoaded && !this.props.isScriptLoaded) {
-                if (isScriptLoadSucceed) {
-                    this.setState({ showButton: true });
-                } else {
-                    console.log('Cannot load Paypal script!');
-                    this.props.onError();
-                }
-            }
-        }
     }
-
 
     handlePayment = () => {
 
@@ -87,10 +78,9 @@ class PaypalButton extends React.Component {
         let ppbtn = '';
         if (this.state.showButton) {
             ppbtn = (<paypal.Button.react
-                env={this.state.env}
-                client={this.state.client}
+                env={this.props.env}
+                client={this.props.client}
                 payment={() => this.handlePayment()}
-                commit
                 onAuthorize={(data, actions) => this.onAuthorize(data, actions)}
                 onCancel={this.props.onCancel}
                 style={style}
