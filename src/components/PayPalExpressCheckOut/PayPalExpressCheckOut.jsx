@@ -10,6 +10,9 @@ import "~components/PayPalExpressCheckOut/PayPalExpressCheckOut.scss";
  * 
  * Used the following class a reference
  * https://cubettech.com/resources/blog/integrating-paypal-rest-api-with-react-js/
+ * 
+ * Paypal documentation:
+ * https://developer.paypal.com/docs/api/payments/v1/
  */
 
 class PaypalButton extends React.Component {
@@ -46,12 +49,28 @@ class PaypalButton extends React.Component {
 
         if (!total || !currency) return {};
 
+        // a message needs to be added here for the size
+
         return {
             amount: {
                 total: total,
                 currency: currency
             }
         };
+
+        // "item_list": {
+        //     "items": [
+        //       {
+        //         "name": "hat",
+        //         "description": "Brown hat.",
+        //         "quantity": "5",
+        //         "price": "3",
+        //         "tax": "0.01",
+        //         "sku": "1",
+        //         "currency": "USD"
+        //       },
+        //     ],
+        // "description": "The payment transaction description.",
 
     }
 

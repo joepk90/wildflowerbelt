@@ -25,6 +25,8 @@ class WildflowerBelt extends ProductDetails {
         if (isNaN(price) === true) return;
 
         // TODO to a check here to ensure a product option selected
+        // the price might be 0 if the choose an option but haven't changed the quantity
+        // some of this logic should potentailly be moved to the isBuyButtonDisabled method
 
         this.setState(
             {
