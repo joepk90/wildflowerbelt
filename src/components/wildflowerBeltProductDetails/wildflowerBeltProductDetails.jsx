@@ -10,14 +10,28 @@ class WildflowerBelt extends ProductDetails {
 
     state = {
         quantity: 1,
-        selectedOption: null
+        selectedOption: null,
+        totalCost: 0
     }
 
     handleQuantityChange = (event) => {
 
         if (!event.currentTarget.value) return;
 
-        this.setState({ quantity: event.currentTarget.value });
+        const quantity = event.currentTarget.value;
+        const { price } = this.props;
+
+        if (isNaN(quantity) === true || quantity <= 0) return;
+        if (isNaN(price) === true) return;
+
+        // TODO to a check here to ensure a product option selected
+
+        this.setState(
+            {
+                quantity: quantity,
+                totalCost: quantity * price
+            }
+        );
 
     }
 
@@ -70,7 +84,7 @@ class WildflowerBelt extends ProductDetails {
                         disabled={this.isBuyButtonDisabled()}
                     >
                         <span className="button__label--buy-now">Buy Now</span>
-                        <PaypalExpressBtn total={29.99} />
+                        <PaypalExpressBtn total={this.state.totalCost} />
                     </Button>
 
                 </div>
@@ -80,6 +94,10 @@ class WildflowerBelt extends ProductDetails {
         );
     }
 }
+
+WildflowerBelt.defaultProps = {
+    price: 29.99,
+};
 
 export default WildflowerBelt;
 
