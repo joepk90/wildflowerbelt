@@ -45,13 +45,6 @@ class WildflowerBelt extends ProductDetails {
 
     }
 
-    handleBuyNowClick = () => {
-
-        const { state } = this;
-
-        console.log('the buy button has been clicked: ', state);
-    }
-
     isBuyButtonDisabled = () => {
 
         const isDisabled = 'disabled';
