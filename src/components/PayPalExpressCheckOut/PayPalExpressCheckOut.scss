@@ -1,0 +1,39 @@
+@import '~scss/base/_base.scss';
+@import '~scss/helpers/_helpers.scss';
+
+.paypal-button {
+    opacity: 0;
+}
+
+.button {
+    
+    padding: 0! important;
+    max-width: 150px;
+    overflow: hidden;
+
+    /* TEMP BUY NOW BUTTON SCSS - THIS NEEDS TO GO */
+
+    &--buy-now {
+        position: relative;
+
+        &.disabled {
+            .zoid-outlet {
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__label {
+        &--buy-now {
+            position: absolute;
+            color: $text-white;
+            width: 100%;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            padding: 11px;
+        }
+    }
+
+}
