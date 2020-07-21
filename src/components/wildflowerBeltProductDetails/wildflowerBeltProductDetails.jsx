@@ -54,13 +54,6 @@ class WildflowerBelt extends ProductDetails {
 
     render() {
 
-        const client = {
-            sandbox: process.env.PAYPAL_SANDBOX_CLIENT_ID,
-            production: process.env.PAYPAL_PRODUCTION_CLIENT_ID,
-        }
-
-        const paypalEnv = process.env.PAYPAL_ENVIRONMENT;
-
         return (
 
             <ProductDetails>
@@ -77,7 +70,7 @@ class WildflowerBelt extends ProductDetails {
                         disabled={this.isBuyButtonDisabled()}
                     >
                         <span className="button__label--buy-now">Buy Now</span>
-                        <PaypalExpressBtn total={29.99} currency='GBP' client={client} env={paypalEnv} />
+                        <PaypalExpressBtn total={29.99} />
                     </Button>
 
                 </div>

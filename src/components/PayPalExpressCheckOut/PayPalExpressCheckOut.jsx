@@ -122,7 +122,14 @@ PaypalButton.propTypes = {
 };
 
 PaypalButton.defaultProps = {
-    env: 'sandbox',
+    total: 29.99,
+    currency: 'GBP',
+    client: {
+        sandbox: process.env.PAYPAL_SANDBOX_CLIENT_ID,
+        production: process.env.PAYPAL_PRODUCTION_CLIENT_ID,
+    },
+    env: process.env.PAYPAL_ENVIRONMENT,
+
     onSuccess: (payment) => {
         console.log('The payment was succeeded!', payment);
     },
