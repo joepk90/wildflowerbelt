@@ -119,9 +119,9 @@ class PaypalButton extends React.Component {
             size: 'large'
         }
 
-        let ppbtn = '';
+        let paypalButton = '';
         if (this.state.showButton) {
-            ppbtn = (<paypal.Button.react
+            paypalButton = (<paypal.Button.react
                 env={this.props.env}
                 client={this.props.client}
                 payment={() => this.handlePayment()}
@@ -130,7 +130,7 @@ class PaypalButton extends React.Component {
                 style={style}
             />);
         }
-        return <div>{ppbtn}</div>;
+        return <div>{paypalButton}</div>;
     }
 }
 
@@ -151,6 +151,9 @@ PaypalButton.defaultProps = {
 
     onSuccess: (payment) => {
         console.log('The payment was succeeded!', payment);
+
+        // TODO add payment successful message + reset the product options
+
     },
     onCancel: (data) => {
         console.log('The payment was cancelled!', data);
