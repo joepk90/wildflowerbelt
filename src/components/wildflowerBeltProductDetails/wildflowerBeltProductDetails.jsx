@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { pageLinks } from "~utilities/utilities.js"
 import Button from "~components/common/button/button";
 import ProductDetails from "~components/common/productDetails/productDetails";
 import PaypalExpressBtn from '~components/PayPalExpressCheckOut/PayPalExpressCheckOut';
@@ -76,6 +77,28 @@ class WildflowerBelt extends ProductDetails {
 
     }
 
+    resetState = () => {
+
+        const defaultState = {
+            quantity: 1,
+            selectedOption: null,
+            totalCost: 0
+        }
+
+        this.setState(defaultState);
+
+    }
+
+    handleSuccessfulPayment = (payment) => {
+
+        console.log('Successful Payment!', payment);
+
+        this.resetState();
+
+        window.location.href = pageLinks.orderConfirmation;
+
+    }
+
     render() {
 
         return (
@@ -94,7 +117,10 @@ class WildflowerBelt extends ProductDetails {
                         disabled={this.isBuyButtonDisabled()}
                     >
                         <span className="button__label--buy-now">Buy Now</span>
-                        <PaypalExpressBtn total={this.state.totalCost} />
+                        <PaypalExpressBtn
+                            total={this.state.totalCost}
+                            onSuccess={(payment) => this.handleSuccessfulPayment(payment)}
+                        />
                     </Button>
 
                     <div className='paypal-logo'>
