@@ -73,15 +73,7 @@ class WildflowerBelt extends ProductDetails {
 
     isBuyButtonDisabled = () => {
 
-        const isDisabled = 'disabled';
-
-        if (this.state.quantity <= 0) return isDisabled;
-
-        const { value, label } = this.state.selectedOption || {};
-
-        if (typeof value === 'undefined' || typeof label === 'undefined') return isDisabled;
-
-        return '';
+        if (this.state.totalCost === 0) return 'disabled';
 
     }
 
