@@ -14,7 +14,7 @@ const NotFoundPage = () => (
 
     <SEO title="404: Not found" />
 
-    <Section options={{ marginBottom: true }}>
+    <Section options={{ marginLarge: true, paddingLarge: true }}>
       <Container>
 
         <GridContainer>
