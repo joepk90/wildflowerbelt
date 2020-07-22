@@ -151,9 +151,6 @@ PaypalButton.defaultProps = {
 
     onSuccess: (payment) => {
         console.log('The payment was succeeded!', payment);
-
-        // TODO add payment successful message + reset the product options
-
     },
     onCancel: (data) => {
         console.log('The payment was cancelled!', data);
