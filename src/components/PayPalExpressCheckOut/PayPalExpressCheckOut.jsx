@@ -43,36 +43,60 @@ class PaypalButton extends React.Component {
 
     }
 
+    // paypal documentation - see: Set Up a Payment
+    // https://developer.paypal.com/docs/archive/checkout/integrate/#2-set-up-a-payment
     createTransactionObject = () => {
 
-        const { total, currency } = this.props;
+        const { total, currency, option, quantity, price } = this.props || {};
 
-        if (!total || !currency) return {};
-
-        // a message needs to be added here for the size
+        if (!total || !currency || !option || !quantity || !price) return;
 
         return {
             amount: {
                 total: total,
-                currency: currency
+                currency: currency,
+                // details: {
+                //     subtotal: '30.00',
+                //     tax: '0.07',
+                //     shipping: '0.03',
+                //     handling_fee: '1.00',
+                //     shipping_discount: '-1.00',
+                //     insurance: '0.01'
+                // }
+            },
+            description: 'Thanks for your order.',
+            // custom: '90048630024435',
+            //invoice_number: '12345', Insert a unique invoice number
+            // payment_options: {
+            //     allowed_payment_method: 'INSTANT_FUNDING_SOURCE'
+            // },
+            // soft_descriptor: 'ECHI5786786',
+            item_list: {
+                items: [
+                    {
+                        name: 'Wildflower Belt - ' + option.label,
+                        description: 'Embossed Western Belt',
+                        quantity: quantity,
+                        price: price,
+                        // tax: '0.01',
+                        sku: '1',
+                        currency: currency
+                    }
+                ],
+                // shipping_address: {
+                //     recipient_name: 'Brian Robinson',
+                //     line1: '4th Floor',
+                //     line2: 'Unit #34',
+                //     city: 'San Jose',
+                //     country_code: 'US',
+                //     postal_code: '95131',
+                //     phone: '011862212345678',
+                //     state: 'CA'
+                // }
             }
-        };
-
-        // "item_list": {
-        //     "items": [
-        //       {
-        //         "name": "hat",
-        //         "description": "Brown hat.",
-        //         "quantity": "5",
-        //         "price": "3",
-        //         "tax": "0.01",
-        //         "sku": "1",
-        //         "currency": "USD"
-        //       },
-        //     ],
-        // "description": "The payment transaction description.",
-
+        }
     }
+
 
     handlePayment = () => {
 
@@ -82,8 +106,9 @@ class PaypalButton extends React.Component {
 
         return window.paypal.rest.payment.create(env, client, {
             transactions: [
-                this.createTransactionObject()
+                this.createTransactionObject(),
             ],
+            note_to_payer: 'Contact us for any questions on your order.'
         })
     }
 
@@ -141,7 +166,8 @@ PaypalButton.propTypes = {
 };
 
 PaypalButton.defaultProps = {
-    total: 29.99,
+    total: 0,
+    price: 29.99,
     currency: 'GBP',
     client: {
         sandbox: process.env.PAYPAL_SANDBOX_CLIENT_ID,

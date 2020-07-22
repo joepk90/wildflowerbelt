@@ -101,6 +101,8 @@ class WildflowerBelt extends ProductDetails {
 
     render() {
 
+        const { quantity } = this.state || {};
+
         return (
 
             <ProductDetails>
@@ -119,6 +121,9 @@ class WildflowerBelt extends ProductDetails {
                         <span className="button__label--buy-now">Buy Now</span>
                         <PaypalExpressBtn
                             total={this.state.totalCost}
+                            option={this.state.selectedOption}
+                            quantity={quantity}
+                            price={this.props.price}
                             onSuccess={(payment) => this.handleSuccessfulPayment(payment)}
                         />
                     </Button>
