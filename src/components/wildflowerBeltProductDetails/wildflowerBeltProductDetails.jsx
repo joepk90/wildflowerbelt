@@ -3,6 +3,7 @@ import React from 'react';
 import Button from "~components/common/button/button";
 import ProductDetails from "~components/common/productDetails/productDetails";
 import PaypalExpressBtn from '~components/PayPalExpressCheckOut/PayPalExpressCheckOut';
+import Image from "~components/image/image";
 
 import "~components/wildflowerBeltProductDetails/wildflowerBeltProductDetails.scss";
 
@@ -81,6 +82,11 @@ class WildflowerBelt extends ProductDetails {
                         <span className="button__label--buy-now">Buy Now</span>
                         <PaypalExpressBtn total={this.state.totalCost} />
                     </Button>
+
+                    <div className='paypal-logo'>
+                        <Image filename="paypal-logo.png" />
+                    </div>
+
 
                 </div>
                 {this.theProductCode('SKU: ')}
