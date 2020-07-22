@@ -15,26 +15,42 @@ class WildflowerBelt extends ProductDetails {
         totalCost: 0
     }
 
-    handleQuantityChange = (event) => {
+    getPrice = () => {
 
-        if (!event.currentTarget.value) return;
-
-        const quantity = event.currentTarget.value;
         const { price } = this.props;
 
+        if (isNaN(price) === true) return null;
+
+        return price
+
+    }
+
+    calculateTotalCost(quantity) {
+
+        const { price } = this.props;
+
+        return quantity * price;
+
+    }
+
+    handleQuantityChange = (event) => {
+
+        const { value: quantity } = event.currentTarget;
+
         if (isNaN(quantity) === true || quantity <= 0) return;
-        if (isNaN(price) === true) return;
 
-        // TODO to a check here to ensure a product option selected
-        // the price might be 0 if the choose an option but haven't changed the quantity
-        // some of this logic should potentailly be moved to the isBuyButtonDisabled method
+        const price = this.getPrice();
 
-        this.setState(
-            {
-                quantity: quantity,
-                totalCost: quantity * price
-            }
-        );
+        if (price === null) return;
+
+        const { selectedOption, totalCost } = this.state;
+
+        let newTotalCost = totalCost;
+        if (selectedOption !== null) {
+            newTotalCost = this.calculateTotalCost(quantity);
+        }
+
+        this.setState({ quantity, totalCost: newTotalCost });
 
     }
 
@@ -44,7 +60,14 @@ class WildflowerBelt extends ProductDetails {
             return;
         }
 
-        this.setState({ selectedOption });
+        const { quantity, totalCost } = this.state;
+
+        let newTotalCost = totalCost;
+        if (quantity > 0) {
+            newTotalCost = this.calculateTotalCost(quantity);
+        }
+
+        this.setState({ selectedOption, totalCost: newTotalCost });
 
     }
 
