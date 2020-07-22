@@ -95,7 +95,9 @@ class WildflowerBelt extends ProductDetails {
 
         this.resetState();
 
-        window.location.href = pageLinks.orderConfirmation;
+        if (process.env.NODE_ENV !== 'development') {
+            window.location.href = pageLinks.orderConfirmation;
+        }
 
     }
 
