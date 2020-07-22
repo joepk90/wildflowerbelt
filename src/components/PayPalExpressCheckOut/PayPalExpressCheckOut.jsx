@@ -19,12 +19,16 @@ class PaypalButton extends React.Component {
     constructor(props) {
         super(props);
 
-        window.React = React;
-        window.ReactDOM = ReactDOM;
-
         this.state = {
             showButton: false,
+            isWindowAvailable: false
         };
+    }
+
+    componentDidMount() {
+        window.React = React;
+        window.ReactDOM = ReactDOM;
+        this.setState({ isWindowAvailable: true });
     }
 
     componentDidUpdate(prevProps) {
@@ -134,6 +138,10 @@ class PaypalButton extends React.Component {
     }
 
     render() {
+        const { isWindowAvailable } = this.state;
+
+        if (isWindowAvailable === false) return '';
+
         const paypal = window.paypal;
 
         const style = {
