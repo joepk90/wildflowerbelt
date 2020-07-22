@@ -28,7 +28,8 @@
     "prettier": "2.0.5",
     "react-lightgallery": "^0.7.0",
     "react-select": "^3.1.0",
-    "react-star-ratings": "^2.3.0"
+    "react-star-ratings": "^2.3.0",
+    "react-async-script-loader": "^0.3.0"
   },
   "keywords": [
     "gatsby"
