@@ -15,6 +15,29 @@ class WildflowerBelt extends ProductDetails {
         totalCost: 0
     }
 
+    componentDidUpdate(previousProps, previousState) {
+
+        const { quantity: previousQuantity, selectedOption: previousSelectedOption } = previousState
+        const { quantity, selectedOption } = this.state
+
+        if (quantity !== previousQuantity || selectedOption !== previousSelectedOption) {
+            this.calculateTotalCost();
+        }
+    }
+
+    calculateTotalCost = () => {
+
+        const { selectedOption, quantity } = this.state;
+
+        const price = this.getPrice();
+
+        if (price === null) return;
+
+        if (quantity <= 0 || selectedOption === null) return;
+
+        this.setState({ totalCost: quantity * price });
+    }
+
     getPrice = () => {
 
         const { price } = this.props;
@@ -25,49 +48,25 @@ class WildflowerBelt extends ProductDetails {
 
     }
 
-    calculateTotalCost(quantity) {
-
-        const { price } = this.props;
-
-        return quantity * price;
-
-    }
-
     handleQuantityChange = (event) => {
 
-        const { value: quantity } = event.currentTarget;
+        const { value } = event.currentTarget;
 
-        if (isNaN(quantity) === true || quantity <= 0) return;
+        if (isNaN(value) === true || value <= 0) return;
 
-        const price = this.getPrice();
+        const quantity = parseInt(value);
 
-        if (price === null) return;
-
-        const { selectedOption, totalCost } = this.state;
-
-        let newTotalCost = totalCost;
-        if (selectedOption !== null) {
-            newTotalCost = this.calculateTotalCost(quantity);
-        }
-
-        this.setState({ quantity, totalCost: newTotalCost });
+        this.setState({ quantity });
 
     }
 
     handleOptionsChange = selectedOption => {
 
-        if (!selectedOption.value || !selectedOption.label) {
-            return;
-        }
+        const { value, label } = selectedOption;
 
-        const { quantity, totalCost } = this.state;
+        if (!value || !label) return
 
-        let newTotalCost = totalCost;
-        if (quantity > 0) {
-            newTotalCost = this.calculateTotalCost(quantity);
-        }
-
-        this.setState({ selectedOption, totalCost: newTotalCost });
+        this.setState({ selectedOption });
 
     }
 
