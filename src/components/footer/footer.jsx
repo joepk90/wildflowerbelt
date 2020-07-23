@@ -19,7 +19,8 @@ const Footer = ({ menuLinks }) => {
                                 <p className="site-footer__title">About Us</p>
                                 <div className="site-footer__item">
                                     <Icon />
-                                    <p className="site-footer__about-us">Wildflower Belt was established in Dorset, UK, as a small independent family business and is built on a love of high quality leather accessories.</p>
+                                    {/* TODO move footer about content out of layout} */}
+                                    <p className="site-footer__about-us">Wildflower Belt is a small independent family business built on a love of high quality leather accessories, based in London, UK, </p>
                                 </div>
                             </Col>
                             <Col sm={12} lg={6}>
