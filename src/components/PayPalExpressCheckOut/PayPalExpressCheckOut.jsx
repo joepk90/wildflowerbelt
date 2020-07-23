@@ -178,10 +178,10 @@ PaypalButton.defaultProps = {
     price: 29.99,
     currency: 'GBP',
     client: {
-        sandbox: process.env.PAYPAL_SANDBOX_CLIENT_ID,
-        production: process.env.PAYPAL_PRODUCTION_CLIENT_ID,
+        sandbox: process.env.GATSBY_PAYPAL_SANDBOX_CLIENT_ID,
+        production: process.env.GATSBY_PAYPAL_PRODUCTION_CLIENT_ID,
     },
-    env: process.env.PAYPAL_ENVIRONMENT,
+    env: process.env.GATSBY_PAYPAL_ENVIRONMENT,
 
     onSuccess: (payment) => {
         console.log('The payment was succeeded!', payment);
