@@ -25,7 +25,7 @@ const productImages = [wildflowerBelt.getImage(), ...wildflowerBelt.getAssets('i
 const WildflowerBelt = () => (
     <Layout>
 
-        <SEO title="Wildflower Belt" className="wildflowerbelt" />
+        <SEO title="Wildflower Belt" />
 
         <Section options={{ paddingLarge: true }}>
             <Container>
