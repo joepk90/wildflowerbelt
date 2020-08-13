@@ -50,7 +50,7 @@ function SEO({ description, lang, image, meta, title, tabTitle, pathname }) {
   const imageName = image ? image : site.siteMetadata.image;
   const imageData = siteUtilities.getImageData(imageName, images);
   const metaImage = imageData.resize ? imageData.resize : null;
-  const imagePath = metaImage.src ? `${site.siteMetadata.siteUrl}/${metaImage.src}` : null;
+  const imagePath = metaImage.src ? `${site.siteMetadata.siteUrl}${metaImage.src}` : null;
 
 
   const titleTemplate = tabTitle ? tabTitle : `%s`; // if the tabTitle is provided use the tab title, else use the seo title
