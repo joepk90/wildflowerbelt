@@ -19,9 +19,10 @@ import WildflowerbeltData from "~content/products/wildflowerbelt";
 import Belt from "~classes/belt";
 const wildflowerBelt = new Belt(WildflowerbeltData);
 
-const IndexPage = () => (
+const IndexPage = ({ location }) => (
   <Layout>
-    <SEO title="Home" />
+
+    <SEO pathname={location.pathname} {...indexData.seo} />
 
     <Section options={{ paddingLarge: true }}>
       <Container options={{ fullWidth: true }}>

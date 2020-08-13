@@ -22,10 +22,10 @@ import SEO from "~components/seo";
 const wildflowerBelt = new Belt(WildflowerbeltData);
 const productImages = [wildflowerBelt.getImage(), ...wildflowerBelt.getAssets('image', 'path')];
 
-const WildflowerBelt = () => (
+const WildflowerBelt = ({ location }) => (
     <Layout>
 
-        <SEO title="Wildflower Belt" />
+        <SEO pathname={location.pathname} {...WildflowerbeltData.seo} />
 
         <Section options={{ paddingLarge: true }}>
             <Container>

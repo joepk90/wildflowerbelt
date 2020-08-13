@@ -10,7 +10,7 @@ import SEO from "~components/seo";
 const OrderConfirmation = () => (
     <Layout>
 
-        <SEO title="Order Confirmation" />
+        <SEO tabTitle="Order Confirmation" />
 
         <Section options={{ marginLarge: true, paddingLarge: true }}>
             <Container>

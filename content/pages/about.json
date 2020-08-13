@@ -22,5 +22,10 @@
         {
             "p": "Thanks for your interest in our product."
         }
-    ]
+    ],
+    "seo": {
+        "tabTitle": "About",
+        "title": "About | Wildflower Belt is an online store built aiming to provide the highest quality western belts and accessories.",
+        "description": "Wildflower Belt is an online store built on a love of high quality western belts and accessories. We are a small independent business, aiming to provide high quality, original products. Originally established in Dorset, and now operating from London we aim to provide the best customer service and value."
+    }
 }

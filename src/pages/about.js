@@ -9,10 +9,10 @@ import Content from "~components/content/content";
 import Section from "~components/section/section";
 import SEO from "~components/seo";
 
-const About = () => (
+const About = ({ location }) => (
   <Layout>
 
-    <SEO title={aboutData.title} />
+    <SEO pathname={location.pathname} {...aboutData.seo} />
 
     <Section options={{ marginBottom: true }}>
       <Container>

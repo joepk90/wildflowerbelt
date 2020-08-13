@@ -4,7 +4,7 @@ const siteUtilities = require("./src/utilities/siteUtilities.js");
 
 module.exports = {
   siteMetadata: {
-    title: `Wildflower Belt`,
+    title: `The Wildflower Belt`,
     menuLinks: [
       {
         name: 'Home',
@@ -25,6 +25,7 @@ module.exports = {
     ],
     description: `Crafted from rich tan leather, this accessory boasts a hand-brushed, leafy embossed pattern that adds flair to anything you wear.`,
     author: `Wildflower Belt Ltd`,
+    image: `wildflower-belt-logo.png`,
     siteUrl: siteUtilities.getSiteUrl(),
   },
   plugins: [
