@@ -9,8 +9,30 @@ const getSiteUrl = function () {
 
 }
 
+const getImageData = function (filename, images) {
+
+    if (filename === '' || !images.edges) return;
+
+    const image = images.edges.find(n => {
+
+        if (!n.node.relativePath) return null;
+
+        return n.node.relativePath.includes(filename);
+
+    });
+
+
+    if (!image || !image.node.childImageSharp) {
+        return null;
+    }
+
+    return image.node.childImageSharp;
+
+}
+
 const siteUtilities = {
     getSiteUrl,
+    getImageData
 };
 
 module.exports = siteUtilities;
