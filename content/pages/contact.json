@@ -10,5 +10,10 @@
         {
             "p": "Expect to hear back from us within 24 hours however please allow up to 72 hours as we may be experiencing a period of very high demand."
         }
-    ]
+    ],
+    "seo": {
+        "tabTitle": "Contact",
+        "title": "Contact | Do you have an issue or want to ask us a question? Contact us today.",
+        "description": "The Wildflower Belt team aims to provide the highest customer service. If you have had any issues or problems with your order we want to be the first to know. Or if you want to provide feedback or send us a review we are always keen to hear what people think of our designer Western Belt. Please contact us today."
+    }
 }
