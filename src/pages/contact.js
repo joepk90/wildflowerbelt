@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "~components/layout/layout";
-import contactData from "~content/contact.json"
+import contactData from "~content/pages/contact.json"
 import Container from "~components/container/container";
 import { GridContainer, Row, Col } from '~components/common/grid/grid';
 import Title from "~components/title/title";

@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import "~scss/pages/index.scss"
 
 import { pageLinks } from "~utilities/utilities.js"
-import indexData from "~content/index.json"
+import indexData from "~content/pages/index.json"
 import Layout from "~components/layout/layout";
 import Image from "~components/image/image";
 import Title from "~components/title/title";
@@ -15,7 +15,7 @@ import PromoCard from '~components/promo-card/promo-card';
 import SEO from "~components/seo";
 import { GridContainer, Row, Col } from '~components/common/grid/grid';
 import ReviewPromotion from "~components/reviewPromotion/reviewPromotion";
-import WildflowerbeltData from "~content/wildflowerbelt";
+import WildflowerbeltData from "~content/products/wildflowerbelt";
 import Belt from "~classes/belt";
 const wildflowerBelt = new Belt(WildflowerbeltData);
 

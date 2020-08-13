@@ -3,7 +3,7 @@ import React from "react"
 import "~scss/pages/wildflowerbelt.scss"
 
 import { LightgalleryProvider } from "react-lightgallery";
-import WildflowerbeltData from "~content/wildflowerbelt";
+import WildflowerbeltData from "~content/products/wildflowerbelt";
 import Layout from "~components/layout/layout";
 import { GridContainer, Row, Col } from '~components/common/grid/grid';
 import Container from "~components/container/container";
