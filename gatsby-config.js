@@ -1,6 +1,9 @@
 // should page links just be set here and queried in lyaouts using graph QL?
 const pageLinks = require("./src/utilities/page-links.js");
-const siteUtilities = require("./src/utilities/siteUtilities.js");
+
+// TODO review/organise the environment variables + siteURL setup
+const activeEnv = process.env.NODE_ENV || "development"
+require("dotenv").config({ path: `.env.${activeEnv}`, })
 
 module.exports = {
   siteMetadata: {
@@ -26,7 +29,7 @@ module.exports = {
     description: `Crafted from rich tan leather, this accessory boasts a hand-brushed, leafy embossed pattern that adds flair to anything you wear.`,
     author: `Wildflower Belt Ltd`,
     image: `wildflower-belt-logo.png`,
-    siteUrl: siteUtilities.getSiteUrl(),
+    siteUrl: process.env.GATSBY_SITE_URL || `https://wildflowerbelt.com`,
   },
   plugins: [
     `gatsby-plugin-sass`,

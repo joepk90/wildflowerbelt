@@ -1,13 +1,19 @@
-const getSiteUrl = function () {
+// TODO fix getSiteUrl setup
+// const getSiteUrl = function () {
 
-    // TODO make this dynamic: process.env.PORT
-    const devUrl = 'http://localhost:8000';
+//     return 'poop';
 
-    if (!process.env.GATSBY_SITE_URL) return devUrl;
+//     return process.env.poop || `https://wildflowerbelt.com`;
 
-    return process.env.GATSBY_SITE_URL;
+//     // // TODO make this dynamic: process.env.PORT
+//     // const devUrl = 'http://localhost:8000';
 
-}
+//     // if (!process.env.GATSBY_SITE_URL) return devUrl;
+
+//     // // TODO get sitename from env variable
+//     // return 'https://wildflowerbelt.com'
+
+// }
 
 const getImageData = function (filename, images) {
 
@@ -31,7 +37,6 @@ const getImageData = function (filename, images) {
 }
 
 const siteUtilities = {
-    getSiteUrl,
     getImageData
 };
 
