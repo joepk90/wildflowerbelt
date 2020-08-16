@@ -81,6 +81,10 @@ function SEO({ description, lang, image, meta, title, tabTitle, pathname }) {
           content: metaDescription,
         },
         {
+          property: `og:url`,
+          content: canonical,
+        },
+        {
           property: `og:title`,
           content: title,
         },
