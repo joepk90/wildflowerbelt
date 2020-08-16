@@ -29,7 +29,7 @@ module.exports = {
     description: `Crafted from rich tan leather, this accessory boasts a hand-brushed, leafy embossed pattern that adds flair to anything you wear.`,
     author: `Wildflower Belt Ltd`,
     image: `wildflower-belt-logo.png`,
-    siteUrl: process.env.GATSBY_SITE_URL || `https://wildflowerbelt.com`,
+    siteUrl: process.env.GATSBY_SITE_URL || `https://www.wildflowerbelt.com`,
   },
   plugins: [
     `gatsby-plugin-sass`,
