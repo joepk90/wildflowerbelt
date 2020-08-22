@@ -56,7 +56,10 @@ class ProductDetails extends Component {
         if (price.hasOwnProperty('amount') === false || price.hasOwnProperty('currency') === false) return;
 
         return (
-            <p className="product-details__price">{price.currency}{price.amount}</p>
+            <div lassName="product-details__prices">
+                <p className="product-details__price">{price.currency}{price.amount}</p>
+                <p className="product-details__price--discounted">{price.currency}{price.amount}</p>
+            </div>
         );
 
     }

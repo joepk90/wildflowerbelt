@@ -41,11 +41,13 @@ class WildflowerBelt extends ProductDetails {
 
     getPrice = () => {
 
-        const { price } = this.props;
+        const { price, discountedPrice } = this.props;
 
-        if (isNaN(price) === true) return null;
+        if (isInteger(discountedPrice)) return discountedPrice;
 
-        return price
+        if (isInteger(price)) return price;
+
+        return this.props.price
 
     }
 
@@ -125,7 +127,7 @@ class WildflowerBelt extends ProductDetails {
                             total={this.state.totalCost}
                             option={this.state.selectedOption}
                             quantity={quantity}
-                            price={this.props.price}
+                            price={this.getPrice()}
                             onSuccess={(payment) => this.handleSuccessfulPayment(payment)}
                         />
                     </Button>
