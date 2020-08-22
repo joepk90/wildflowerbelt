@@ -5,6 +5,8 @@ const pageLinks = require("./src/utilities/page-links.js");
 const activeEnv = process.env.NODE_ENV || "development"
 require("dotenv").config({ path: `.env.${activeEnv}`, })
 
+const siteUrl = process.env.GATSBY_SITE_URL || `https://www.wildflowerbelt.com`;
+
 module.exports = {
   siteMetadata: {
     title: `The Wildflower Belt`,
@@ -29,7 +31,7 @@ module.exports = {
     description: `Crafted from rich tan leather, this accessory boasts a hand-brushed, leafy embossed pattern that adds flair to anything you wear.`,
     author: `Wildflower Belt Ltd`,
     image: `wildflower-belt-logo.png`,
-    siteUrl: process.env.GATSBY_SITE_URL || `https://www.wildflowerbelt.com`,
+    siteUrl: siteUrl,
   },
   plugins: [
     `gatsby-plugin-sass`,
