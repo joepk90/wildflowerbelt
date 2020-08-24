@@ -121,13 +121,13 @@ class WildflowerBelt extends ProductDetails {
                         disabled={this.isBuyButtonDisabled()}
                     >
                         <span className="button__label--buy-now">Buy Now</span>
-                        <PaypalExpressBtn
+                        {/* <PaypalExpressBtn
                             total={this.state.totalCost}
                             option={this.state.selectedOption}
                             quantity={quantity}
                             price={this.props.price}
                             onSuccess={(payment) => this.handleSuccessfulPayment(payment)}
-                        />
+                        /> */}
                     </Button>
 
                     <div className='paypal-logo'>
