@@ -30,7 +30,7 @@ module.exports = {
     ],
     description: `Crafted from rich tan leather, this accessory boasts a hand-brushed, leafy embossed pattern that adds flair to anything you wear.`,
     author: `Wildflower Belt Ltd`,
-    image: `wildflower-belt-logo.png`,
+    image: `wildflower-belt.jpg`,
     siteUrl: siteUrl,
   },
   plugins: [
