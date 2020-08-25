@@ -142,6 +142,14 @@ function SEO({ description, lang, image, meta, title, tabTitle, pathname }) {
             name: `twitter:card`,
             content: `summary`,
           },
+          {
+            name: `twitter:image`,
+            content: imagePath,
+          },
+          {
+            name: `twitter:site`,
+            content: canonical,
+          },
         ])
         .concat(meta)}
     />
