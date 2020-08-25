@@ -187,6 +187,10 @@ function SEO({ description, lang, image, meta, title, tabTitle, pathname }) {
           content: `summary`,
         },
         {
+          name: `twitter:site`,
+          content: "@WildflowerBelt",
+        },
+        {
           name: `twitter:creator`,
           content: site.siteMetadata.author,
         },
@@ -218,6 +222,10 @@ function SEO({ description, lang, image, meta, title, tabTitle, pathname }) {
         {
           property: `twitter:image`,
           content: imagePath
+        },
+        {
+          property: `twitter:image:alt`,
+          content: title,
         },
         {
           name: `twitter:card`,
