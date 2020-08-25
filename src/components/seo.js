@@ -67,6 +67,10 @@ function SEO({ description, lang, image, meta, title, tabTitle, pathname }) {
       "@type": "WebSite",
       url: site.siteMetadata.siteUrl,
       name: site.siteMetadata.title,
+      "sameAs": [
+        "https://twitter.com/WildflowerBelt",
+        "https://www.facebook.com/wildflowerbelt"
+      ],
     },
   ]
 
