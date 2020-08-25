@@ -12,6 +12,8 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import siteUtilities from '~utilities/siteUtilities.js';
 
+// potentailly use gatsby-plugin-next-seo to handle SEO via smaller components
+
 function SEO({ description, lang, image, meta, title, tabTitle, pathname }) {
 
   // TODO potentailly move the imaeg query out of the SEO component?
