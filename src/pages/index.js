@@ -84,7 +84,10 @@ const IndexPage = ({ location }) => (
 
     <Section options={{ paddingLarge: true }}>
       <Container>
-        <Title options={{ align: 'center' }}>Reviews</Title>
+
+        <h2 class="text-center">Reviews</h2>
+        {/* TODO - setup optional tag input for title  */}
+        {/* <Title options={{ align: 'center', tag: 'h2' }}>Reviews</Title> */}
 
         {wildflowerBelt.getReviews(['user', 'rating', 'comment']).map(((review, index) => {
           return <ReviewPromotion {...review} key={index} />
