@@ -125,6 +125,38 @@
             "date": "1595105032"
         }
     ],
+    "prices": [
+        {
+            "type": "stripe",
+            "test_id": "price_1HXvIHEpBJ1HN9VwgRrx87pG",
+            "id": "price_1HYJzfEpBJ1HN9VwnBMtqlu2",
+            "size": "xs"
+        },
+        {
+            "type": "stripe",
+            "test_id": "price_1HY9gBEpBJ1HN9VwXyXyKdeV",
+            "id": "price_1HYJzlEpBJ1HN9VwzWV8JFdu",
+            "size": "sm"
+        },
+        {
+            "type": "stripe",
+            "test_id": "price_1HY9gfEpBJ1HN9VwvC2eQqdb",
+            "id": "price_1HYJzuEpBJ1HN9VwSyEC6QkT",
+            "size": "md"
+        },
+        {
+            "type": "stripe",
+            "test_id": "price_1HY9itEpBJ1HN9Vw1cHvWxcG",
+            "id": "price_1HYJzyEpBJ1HN9Vw8a80DV40",
+            "size": "lg"
+        },
+        {
+            "type": "stripe",
+            "test_id": "price_1HY9jOEpBJ1HN9Vwer6LOjld",
+            "id": "price_1HYK03EpBJ1HN9VwF4kFK2yo",
+            "size": "xl"
+        }
+    ],
     "seo": {
         "tabTitle": "Belt",
         "title": "Define your style and personalise your look with the best selling designer Western Belt. Buy the Western Belt today and never go out of fashion.",
