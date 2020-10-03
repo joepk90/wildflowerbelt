@@ -2,6 +2,7 @@ import React from 'react';
 
 import pageLinks from "~utilities/pageLinks" // todo include using utilities
 import ProductDetails from "~components/common/productDetails/productDetails";
+import StripeCheckout from '~components/stripeCheckout/stripeCheckout';
 
 import "~components/wildflowerBeltProductDetails/wildflowerBeltProductDetails.scss";
 
@@ -70,7 +71,11 @@ class WildflowerBelt extends ProductDetails {
 
     isBuyButtonDisabled = () => {
 
-        if (this.state.totalCost === 0) return 'disabled';
+        if (this.state.totalCost === 0) {
+            return true;
+        }
+
+        return false;
 
     }
 
@@ -93,8 +98,18 @@ class WildflowerBelt extends ProductDetails {
         this.resetState();
 
         if (process.env.NODE_ENV !== 'development') {
-            window.location.href = pageLinks.orderConfirmation;
+            window.location.href = pageLinks.orderConfirmationUrl();
         }
+
+    }
+
+    getStripePriceId() {
+
+        const { selectedOption } = this.state
+
+        if (selectedOption === null || !selectedOption.value) return null;
+
+        return selectedOption.value;
 
     }
 
@@ -111,6 +126,16 @@ class WildflowerBelt extends ProductDetails {
                 <div className="product-details__options">
                     {this.theProductOptions('Size: ')}
                     {this.theQuantity()}
+
+                    <StripeCheckout
+                        isDisabled={this.isBuyButtonDisabled()}
+                        classList='button--buy-now'
+                        quantity={quantity}
+                        product={this.getStripePriceId()}
+                        successUrl={pageLinks.orderConfirmationUrl()}
+                        cancelUrl={pageLinks.widflowerBeltUrl()}
+                    />
+
                 </div>
 
                 { this.theProductCode('SKU: ')}
