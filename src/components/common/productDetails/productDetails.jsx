@@ -6,7 +6,7 @@ import Input from '~components/common/input/input'
 
 import "~components/common/productDetails/productDetails.scss";
 
-
+// TODO remove unused methods
 class ProductDetails extends Component {
 
     handleQuantityChange() {

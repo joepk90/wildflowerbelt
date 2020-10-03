@@ -1,3 +1,5 @@
+// TODO rename to page paths
+
 const pageLinks = {
     home: "/",
     wildflowerbelt: "/wildflowerbelt",
