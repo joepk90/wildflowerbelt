@@ -36,6 +36,10 @@ class Belt {
         return this._get('price');
     }
 
+    getPrices() {
+        return this._get('prices');
+    }
+
     getProductCode() {
         return this._get('code');
     }
@@ -95,6 +99,27 @@ class Belt {
 
     }
 
+    getStripePriceId(code) {
+
+        const stripePrices = this.getPrices();
+
+        let priceId;
+        stripePrices.forEach((priceObj) => {
+
+            if (priceObj.type !== 'stripe' || !priceObj.id) {
+                return;
+            }
+
+            if (priceObj.size !== code) return;
+
+            priceId = priceObj.id;
+
+        });
+
+        return priceId;
+
+    }
+
 
     getProductOptions() {
         const sizes = this._get('sizes');
@@ -110,6 +135,10 @@ class Belt {
 
             if (label === null || code === null) return null;
 
+            const priceId = this.getStripePriceId(code);
+
+            if (priceId === null) return null;
+
             const rangeString = this.getSizeRangeString(size);
 
             let labelString = label;
@@ -117,7 +146,7 @@ class Belt {
                 labelString = label + ` (${rangeString})`;
             }
 
-            return { label: labelString, value: code };
+            return { label: labelString, value: priceId };
         })
 
         return productOptions;
