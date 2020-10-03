@@ -1,10 +1,7 @@
 import React from 'react';
 
-import { pageLinks } from "~utilities/utilities.js"
-import Button from "~components/common/button/button";
+import pageLinks from "~utilities/pageLinks" // todo include using utilities
 import ProductDetails from "~components/common/productDetails/productDetails";
-import PaypalExpressBtn from '~components/PayPalExpressCheckOut/PayPalExpressCheckOut';
-import Image from "~components/image/image";
 
 import "~components/wildflowerBeltProductDetails/wildflowerBeltProductDetails.scss";
 
@@ -108,36 +105,17 @@ class WildflowerBelt extends ProductDetails {
         return (
 
             <ProductDetails>
-                {this.theTitle()}
-                {this.thePrice()}
-                {this.theSummary()}
+                { this.theTitle()}
+                { this.thePrice()}
+                { this.theSummary()}
                 <div className="product-details__options">
                     {this.theProductOptions('Size: ')}
                     {this.theQuantity()}
-
-                    <Button
-                        className={'button--buy-now ' + this.isBuyButtonDisabled()}
-                        modifiers={{ promo: true }}
-                        disabled={this.isBuyButtonDisabled()}
-                    >
-                        <span className="button__label--buy-now">Buy Now</span>
-                        <PaypalExpressBtn
-                            total={this.state.totalCost}
-                            option={this.state.selectedOption}
-                            quantity={quantity}
-                            price={this.props.price}
-                            onSuccess={(payment) => this.handleSuccessfulPayment(payment)}
-                        />
-                    </Button>
-
-                    <div className='paypal-logo'>
-                        <Image filename="paypal-logo.png" />
-                    </div>
-
-
                 </div>
-                {this.theProductCode('SKU: ')}
-            </ProductDetails>
+
+                { this.theProductCode('SKU: ')}
+
+            </ProductDetails >
 
         );
     }
