@@ -85,7 +85,7 @@ const IndexPage = ({ location }) => (
     <Section options={{ paddingLarge: true }}>
       <Container>
 
-        <h2 class="text-center">Reviews</h2>
+        <h2 className="text-center">Reviews</h2>
         {/* TODO - setup optional tag input for title  */}
         {/* <Title options={{ align: 'center', tag: 'h2' }}>Reviews</Title> */}
 
