@@ -42,8 +42,7 @@ const WildflowerBelt = ({ location }) => (
                                 summary: wildflowerBelt.getSummary(),
                                 price: { amount: wildflowerBelt.getPrice(), currency: "£" },
                                 options: wildflowerBelt.getProductOptions(),
-                                code: wildflowerBelt.getProductCode(),
-                                buyButtonLabel: "Buy Now"
+                                code: wildflowerBelt.getProductCode() // SKU
                             }} />
                         </Col>
                     </Row>
