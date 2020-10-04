@@ -114,6 +114,11 @@ class Belt {
 
             priceId = priceObj.id;
 
+            // TODO isDevelopment utility function
+            if (process.env.NODE_ENV === 'development') {
+                priceId = priceObj.test_id;
+            }
+
         });
 
         return priceId;
