@@ -1,8 +1,9 @@
-import React from "react"
+import React, { lazy } from "react"
 import { Link } from "gatsby"
 
 import "~scss/pages/index.scss"
 
+import LazyLoadObserver from '~components/common/lazyLoadObserver/lazyLoadObserver';
 import { pageLinks } from "~utilities/utilities.js"
 import indexData from "~content/pages/index.json"
 import Layout from "~components/layout/layout";
@@ -14,10 +15,13 @@ import Content from "~components/content/content";
 import PromoCard from '~components/promo-card/promo-card';
 import SEO from "~components/seo";
 import { GridContainer, Row, Col } from '~components/common/grid/grid';
-import ReviewPromotion from "~components/reviewPromotion/reviewPromotion";
 import WildflowerbeltData from "~content/products/wildflowerbelt";
 import Belt from "~classes/belt";
 const wildflowerBelt = new Belt(WildflowerbeltData);
+
+// lazy loaded components
+const ReviewPromotion = lazy(() => import("~components/reviewPromotion/reviewPromotion"));
+
 
 const IndexPage = ({ location }) => (
   <Layout>
@@ -53,48 +57,52 @@ const IndexPage = ({ location }) => (
       </Container>
     </Section>
 
+    <LazyLoadObserver>
+      <Section options={{ paddingLarge: true }}>
+        <Container>
+          <GridContainer>
+            <Row>
 
-    <Section options={{ paddingLarge: true }}>
-      <Container>
-        <GridContainer>
-          <Row>
+              <Col xs={12} sm={4}>
+                <Link to={pageLinks.wildflowerbelt}>
+                  <Image alt="Snap On Feature" filename="snap-on-feature.jpg" />
+                </Link>
+              </Col>
 
-            <Col xs={12} sm={4}>
-              <Link to={pageLinks.wildflowerbelt}>
-                <Image alt="Snap On Feature" filename="snap-on-feature.jpg" />
-              </Link>
-            </Col>
+              <Col xs={12} sm={4}>
+                <Link to={pageLinks.wildflowerbelt}>
+                  <Image alt="Embossed Pattern" filename="embossed-pattern.jpg" />
+                </Link>
+              </Col>
 
-            <Col xs={12} sm={4}>
-              <Link to={pageLinks.wildflowerbelt}>
-                <Image alt="Embossed Pattern" filename="embossed-pattern.jpg" />
-              </Link>
-            </Col>
+              <Col xs={12} sm={4}>
+                <Link to={pageLinks.wildflowerbelt}>
+                  <Image alt="Free Shipping" filename="free-shipping.jpg" />
+                </Link>
+              </Col>
 
-            <Col xs={12} sm={4}>
-              <Link to={pageLinks.wildflowerbelt}>
-                <Image alt="Free Shipping" filename="free-shipping.jpg" />
-              </Link>
-            </Col>
+            </Row>
+          </GridContainer>
+        </Container>
+      </Section>
+    </LazyLoadObserver>
 
-          </Row>
-        </GridContainer>
-      </Container>
-    </Section>
+    <LazyLoadObserver>
+      <Section options={{ paddingLarge: true }}>
+        <Container>
 
-    <Section options={{ paddingLarge: true }}>
-      <Container>
+          <h2 className="text-center">Reviews</h2>
+          {/* TODO - setup optional tag input for title  */}
+          {/* <Title options={{ align: 'center', tag: 'h2' }}>Reviews</Title> */}
 
-        <h2 className="text-center">Reviews</h2>
-        {/* TODO - setup optional tag input for title  */}
-        {/* <Title options={{ align: 'center', tag: 'h2' }}>Reviews</Title> */}
+          {wildflowerBelt.getReviews(['user', 'rating', 'comment']).map(((review, index) => {
+            return <ReviewPromotion {...review} key={index} />
+          }))}
 
-        {wildflowerBelt.getReviews(['user', 'rating', 'comment']).map(((review, index) => {
-          return <ReviewPromotion {...review} key={index} />
-        }))}
+        </Container>
+      </Section>
+    </LazyLoadObserver>
 
-      </Container>
-    </Section>
 
   </Layout>
 )
