@@ -44,19 +44,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
           {
-            family: `Lato`,
-            // subsets: [],
+            family: 'Lato',
           },
           {
             family: `Open Sans`,
-            variants: [`400`, `400i`, `700`, '700i']
+            weights: ['400', '400i', '700', '700i']
           },
-        ],
-      },
+        ]
+      }
     },
     {
       resolve: `gatsby-plugin-sitemap`,
