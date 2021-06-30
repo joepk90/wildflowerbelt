@@ -49,6 +49,7 @@ module.exports = {
         fonts: [
           {
             family: 'Lato',
+            weights: ['400', '400i', '700', '700i']
           },
           {
             family: `Open Sans`,
