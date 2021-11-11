@@ -95,7 +95,7 @@ module.exports = {
         // should be an object or a function that is executed in the browser
         //
         // Defaults to null
-        // defaultDataLayer: { platform: "gatsby" },
+        defaultDataLayer: { platform: "gatsby" },
 
         // Specify optional GTM environment details.
         // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
@@ -108,6 +108,16 @@ module.exports = {
         // Defaults to gatsby-route-change
         // routeChangeEventName: "YOUR_ROUTE_CHANGE_EVENT_NAME",
       },
+    },
+    {
+      resolve: 'gatsby-gtm-web-vitals',
+      options: {
+        use: [
+          {
+            resolve: 'gatsby-plugin-google-tagmanager' // potentially forces as a dependancy
+          },
+        ],
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
