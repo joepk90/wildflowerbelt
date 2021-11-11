@@ -95,7 +95,7 @@ module.exports = {
         // should be an object or a function that is executed in the browser
         //
         // Defaults to null
-        // defaultDataLayer: { platform: "gatsby" },
+        defaultDataLayer: { platform: "gatsby" },
 
         // Specify optional GTM environment details.
         // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
@@ -110,19 +110,13 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-web-vitals',
+      resolve: 'gatsby-gtm-web-vitals',
       options: {
-        // The Google Analytics property ID; the reporting code won't be generated without it
-        trackingId: 'UA-173042518-1',
-        // An array with metrics you want to track and send to analytics
-        metrics: [`FID`, `TTFB`, `LCP`, `CLS`, `FCP`],
-        // Event Category (optional) { string }, default 'Web Vitals'
-        eventCategory: 'Performance',
-        // Include Web Vitals tracking in development
-        // Defaults to false meaning Vitals will only be tracked in production.
-        includeInDevelopment: false,
-        // Prints metrics in the console when true
-        debug: false,
+        use: [
+          {
+            resolve: 'gatsby-plugin-google-tagmanager' // potentially forces as a dependancy
+          },
+        ],
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
