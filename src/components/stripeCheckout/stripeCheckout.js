@@ -32,6 +32,10 @@ const Checkout = ({ isDisabled, classList, cancelUrl, successUrl, quantity, prod
             lineItems: [{ price: product, quantity: quantity }],
             successUrl: successUrl,
             cancelUrl: cancelUrl,
+            billingAddressCollection: "auto",
+            shippingAddressCollection: {
+                allowedCountries: ["GB"],
+            },
         })
         if (error) {
             console.warn("Error:", error)
