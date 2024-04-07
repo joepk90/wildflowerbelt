@@ -130,7 +130,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: siteUrl,
-        sitemap: siteUrl + '/sitemap.xml',
+        sitemap: siteUrl + '/sitemap.xml', // TODO review siteUrl usage. This should always point to PROD site
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }]
