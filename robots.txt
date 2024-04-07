@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
 Sitemap: https://www.wildflowerbelt.com/sitemap.xml
 Host: https://www.wildflowerbelt.com
