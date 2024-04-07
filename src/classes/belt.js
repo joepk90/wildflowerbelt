@@ -103,7 +103,7 @@ class Belt {
 
     getPriceObId(priceObj) {
 
-        if (siteUtilities.isStripeEnvDevelopment() && priceObj?.test_id) {
+        if (siteUtilities.isDev() && priceObj?.test_id) {
             return priceObj.test_id;
         }
 

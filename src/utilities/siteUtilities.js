@@ -36,9 +36,9 @@ const getImageData = function (filename, images) {
 
 }
 
-const isStripeEnvDevelopment = () => {
+const isDev = () => {
 
-    if (process.env.GATSBY_STRIPE_ENV === "development") {
+    if (process.env.NODE_ENV === "development") {
         return true;
     }
 
@@ -48,7 +48,7 @@ const isStripeEnvDevelopment = () => {
 
 const siteUtilities = {
     getImageData,
-    isStripeEnvDevelopment
+    isDev
 };
 
 
