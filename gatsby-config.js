@@ -124,7 +124,7 @@ module.exports = {
     // `gatsby-plugin-offline`,
     //
     // gatsby-plugin-robots-txt:
-    // set GATSBY_ACTIVE_ENV to development in order to block crawlers (disallow: /)
+    // set GATSBY_ENV to development in order to block crawlers (disallow: /)
     // note: the robots.txt file only gets regenerated on build (npm run build)
     {
       resolve: 'gatsby-plugin-robots-txt',
