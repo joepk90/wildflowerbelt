@@ -1,3 +1,5 @@
+import siteUtilities from '~utilities/siteUtilities.js';
+
 class Belt {
 
     constructor(beltData) {
@@ -99,6 +101,20 @@ class Belt {
 
     }
 
+    getPriceObId(priceObj) {
+
+        if (siteUtilities.isStripeEnvDevelopment() && priceObj?.test_id) {
+            return priceObj.test_id;
+        }
+
+        if (!priceObj.id) {
+            return;
+        }
+
+        return priceObj.id;
+
+    }
+
     getStripePriceId(code) {
 
         const stripePrices = this.getPrices();
@@ -112,12 +128,7 @@ class Belt {
 
             if (priceObj.size !== code) return;
 
-            priceId = priceObj.id;
-
-            // TODO isDevelopment utility function
-            if (process.env.NODE_ENV === 'development') {
-                priceId = priceObj.test_id;
-            }
+            priceId = this.getPriceObId(priceObj);
 
         });
 
