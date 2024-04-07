@@ -131,6 +131,7 @@ module.exports = {
       options: {
         host: siteUrl,
         sitemap: siteUrl + '/sitemap.xml', // TODO review siteUrl usage. This should always point to PROD site
+        resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }]
