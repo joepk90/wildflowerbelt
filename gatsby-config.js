@@ -5,7 +5,8 @@ const pageLinks = require("./src/utilities/page-links.js");
 const activeEnv = process.env.NODE_ENV || "development"
 require("dotenv").config({ path: `.env.${activeEnv}`, })
 
-const siteUrl = process.env.GATSBY_SITE_URL || `https://www.wildflowerbelt.com`;
+const productionUrl = `https://www.wildflowerbelt.com` // TODO consider using env var
+const siteUrl = process.env.GATSBY_SITE_URL || productionUrl;
 
 module.exports = {
   siteMetadata: {
@@ -130,7 +131,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: siteUrl,
-        sitemap: siteUrl + '/sitemap.xml', // TODO review siteUrl usage. This should always point to PROD site
+        sitemap: productionUrl + '/sitemap.xml',
         resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
