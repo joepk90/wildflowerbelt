@@ -38,7 +38,8 @@ const getImageData = function (filename, images) {
 
 const isDev = () => {
 
-    if (process.env.NODE_ENV === "development") {
+    // doesn't seem possible to use NODE_ENV (setting NODE_ENV in ci file or env vars not working)
+    if (process.env.GATSBY_ENV === "development") {
         return true;
     }
 
