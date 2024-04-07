@@ -122,6 +122,10 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    //
+    // gatsby-plugin-robots-txt:
+    // set GATSBY_ACTIVE_ENV to development in order to block crawlers (disallow: /)
+    // note: the robots.txt file only gets regenerated on build (npm run build)
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
